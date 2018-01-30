@@ -1,0 +1,16 @@
+Host gazelle_staging
+        HostName 51.15.130.216
+        User gazelle
+
+Host gazelle_production
+        HostName 138.68.76.204
+        User main
+
+Host cims
+        HostName access.cims.nyu.edu
+        User ego225
+
+Host operating_systems
+        HostName m-dclap-p302-csd.abudhabi.nyu.edu
+        User ego225
+        Port 4410
