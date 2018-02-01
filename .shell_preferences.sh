@@ -10,6 +10,7 @@ alias gnarles-setup="~/code/gnarles/landing/myStuff/setup.sh"
 alias postman="setsid ~/.Postman/Postman && sleep 1 && exit"
 alias gazelle-setup="~/gazelle-setup.sh"
 alias architect="setsid java -jar ~/.sql-architect/architect.jar && sleep 1 && exit"
+alias vim="nvim"
 export GRADLE_OPTS=-Dorg.gradle.daemon=true
 export ANDROID_HOME=~/Android/Sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools

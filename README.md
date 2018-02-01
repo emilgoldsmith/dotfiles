@@ -11,12 +11,7 @@ ln -s /path/to/repo/.shell_preferences.sh .shell_preferences.sh
 ln -s /path/to/repo/.vim .vim
 ln -s /path/to/repo/.vimrc .vimrc
 ln -s /path/to/repo/ssh_config .ssh/config
+ln -s /path/to/repo/nvim ~/.config/nvim
+```
 
-
-.bashrc
-.gitconfig
-.gitignore_global
-.shell_preferences.sh
-.vim
-.vimrc
-ssh_config
+In order for Neovim to pick up on the new plugins you may have to run `:UpdateRemotePlugins`
