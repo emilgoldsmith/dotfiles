@@ -14,4 +14,6 @@ ln -s /path/to/repo/ssh_config .ssh/config
 ln -s /path/to/repo/nvim ~/.config/nvim
 ```
 
-In order for Neovim to pick up on the new plugins you may have to run `:UpdateRemotePlugins`
+In order for Neovim to pick up on the new plugins you may have to run `:UpdateRemotePlugins`.
+
+For install of the `editorconfig` vim plugin you may also need to run `sudo apt install editorconfig`
