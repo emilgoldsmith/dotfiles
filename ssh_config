@@ -1,6 +1,6 @@
 Host gazelle_staging
-        HostName 51.15.130.216
-        User gazelle
+        HostName 159.89.170.49
+        User main
 
 Host gazelle_production
         HostName 138.68.76.204
@@ -12,5 +12,30 @@ Host cims
 
 Host operating_systems
         HostName m-dclap-p302-csd.abudhabi.nyu.edu
+        User ego225
+        Port 4410
+
+Host capstone_1
+        HostName 10.230.12.40
+        User ego225
+        Port 4410
+
+Host capstone_2
+        HostName 10.230.12.41
+        User ego225
+        Port 4410
+
+Host capstone_3
+        HostName 10.230.12.42
+        User ego225
+        Port 4410
+
+Host capstone_4
+        HostName 10.230.12.43
+        User ego225
+        Port 4410
+
+Host capstone_5
+        HostName 10.230.12.44
         User ego225
         Port 4410
