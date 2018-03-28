@@ -34,5 +34,25 @@
       "key": "ctrl+b",
       "command": "-extension.vim_ctrl+b",
       "when": "editorTextFocus && vim.active && vim.use<C-b> && !inDebugRepl && vim.mode != 'Insert'"
+    },
+    {
+      "key": "ctrl+f",
+      "command": "-extension.vim_ctrl+f",
+      "when": "editorTextFocus && vim.active && vim.use<C-f> && !inDebugRepl"
+    },
+    {
+      "key": "ctrl+r",
+      "command": "-extension.vim_ctrl+r",
+      "when": "editorTextFocus && vim.active && vim.use<C-r> && !inDebugRepl"
+    },
+    {
+      "key": "ctrl+y",
+      "command": "-extension.vim_ctrl+y",
+      "when": "editorTextFocus && vim.active && vim.use<C-y> && !inDebugRepl"
+    },
+    {
+      "key": "ctrl+u",
+      "command": "-extension.vim_ctrl+u",
+      "when": "editorTextFocus && vim.active && vim.use<C-u> && !inDebugRepl"
     }
   ]

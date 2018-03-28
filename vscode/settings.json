@@ -6,5 +6,30 @@
     "editor.wordWrap": "on",
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "files.insertFinalNewline": true,
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/node_modules": true
+    },
     "window.zoomLevel": -0.001,
+    "vim.otherModesKeyBindingsNonRecursive": [
+      {
+          "before": ["j"],
+          "after": ["g", "j"]
+      },
+      {
+          "before": ["k"],
+          "after": ["g", "k"]
+      }
+    ],
+    "vim.otherModesKeyBindings": [
+      {
+        "before": ["u"],
+        "after": [],
+      }
+    ],
+    "java.errors.incompleteClasspath.severity": "ignore"
   }
