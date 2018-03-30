@@ -9,3 +9,5 @@
 	excludesfile = /home/emil/.gitignore_global
 [diff]
 	renames = true
+[status]
+	showUntrackedFiles = all

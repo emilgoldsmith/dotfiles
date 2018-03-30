@@ -119,9 +119,9 @@ fi
 export NVM_DIR="/home/emil/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+export PATH="$HOME/.yarn/bin:$PATH"
+
 # Load my stuff
 if [ -f ~/.shell_preferences.sh ]; then
     . ~/.shell_preferences.sh
 fi
-
-export PATH="$HOME/.yarn/bin:$PATH"

@@ -1,35 +1,59 @@
 {
-    "editor.tabSize": 2,
-    "editor.detectIndentation": false,
-    "files.trimFinalNewlines": true,
-    "files.trimTrailingWhitespace": true,
-    "editor.wordWrap": "on",
-    "workbench.editor.enablePreviewFromQuickOpen": false,
-    "files.insertFinalNewline": true,
-    "files.exclude": {
-      "**/.git": true,
-      "**/.svn": true,
-      "**/.hg": true,
-      "**/CVS": true,
-      "**/.DS_Store": true,
-      "**/node_modules": true
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.wordWrap": "on",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "files.insertFinalNewline": true,
+  "files.exclude": {
+    "**/node_modules": true
+  },
+  "window.zoomLevel": -0.001,
+  "vim.otherModesKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "j"
+      ],
+      "after": [
+        "g",
+        "j"
+      ]
     },
-    "window.zoomLevel": -0.001,
-    "vim.otherModesKeyBindingsNonRecursive": [
-      {
-          "before": ["j"],
-          "after": ["g", "j"]
-      },
-      {
-          "before": ["k"],
-          "after": ["g", "k"]
-      }
-    ],
-    "vim.otherModesKeyBindings": [
-      {
-        "before": ["u"],
-        "after": [],
-      }
-    ],
-    "java.errors.incompleteClasspath.severity": "ignore"
-  }
+    {
+      "before": [
+        "k"
+      ],
+      "after": [
+        "g",
+        "k"
+      ]
+    }
+  ],
+  "vim.otherModesKeyBindings": [
+    {
+      "before": [
+        "u"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "undo",
+        }
+      ]
+    },
+    {
+      "before": [
+        "<C-r>",
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "redo",
+        }
+      ]
+    }
+  ],
+  "java.errors.incompleteClasspath.severity": "ignore",
+}

@@ -19,3 +19,5 @@ export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 export PATH=${PATH}:~/.pypy/bin/
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
+
+nvm use &> /dev/null || nvm use node &> /dev/null
