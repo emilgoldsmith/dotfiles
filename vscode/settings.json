@@ -10,6 +10,7 @@
   "files.exclude": {
     "**/node_modules": true
   },
+  "javascript.suggestionActions.enabled": false,
   "window.zoomLevel": -0.001,
   "vim.otherModesKeyBindingsNonRecursive": [
     {
@@ -56,4 +57,7 @@
     }
   ],
   "java.errors.incompleteClasspath.severity": "ignore",
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
 }
