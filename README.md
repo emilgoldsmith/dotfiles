@@ -12,8 +12,7 @@ ln -s /path/to/repo/.vim .vim
 ln -s /path/to/repo/.vimrc .vimrc
 ln -s /path/to/repo/ssh_config .ssh/config
 ln -s /path/to/repo/nvim ~/.config/nvim
-ln -s /path/to/repo/vscode/keybindings.json ~/.config/Code/keybindings.json
-ln -s /path/to/repo/vscode/settings.json ~/.config/Code/settings.json
+cp -s /path/to/repo/vscode/* ~/.config/Code/User/
 ```
 
 In order for Neovim to pick up on the new plugins you may have to run `:UpdateRemotePlugins`.
