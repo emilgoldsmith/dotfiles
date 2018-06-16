@@ -12,11 +12,8 @@ alias gazelle-setup="gazelle-setup.sh"
 alias architect="setsid java -jar ~/.sql-architect/architect.jar && sleep 1 && exit"
 alias vim="nvim"
 export GRADLE_OPTS=-Dorg.gradle.daemon=true
-export ANDROID_HOME=~/Android/Sdk
-export PATH=${PATH}:${ANDROID_HOME}/tools
-export PATH=${PATH}:${ANDROID_HOME}/platform
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 export PATH=${PATH}:~/.pypy/bin/
+export PATH=${PATH}:~/bin/
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 
