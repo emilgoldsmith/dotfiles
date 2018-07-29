@@ -56,8 +56,29 @@
       ]
     }
   ],
-  "java.errors.incompleteClasspath.severity": "ignore",
   "gitlens.advanced.messages": {
     "suppressShowKeyBindingsNotice": true
   },
+  "workbench.startupEditor": "newUntitledFile",
+  "[javascriptreact]": {},
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "cSpell.userWords": [
+    "abramov",
+    "aiden",
+    "crowdsource",
+    "falcor",
+    "github",
+    "github's",
+    "modularization",
+    "modularized",
+    "modularizing",
+    "onboarding",
+    "presentational",
+    "quora",
+    "rebasing",
+    "regexes",
+    "upvoted"
+  ],
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "terminal.integrated.rendererType": "dom",
 }

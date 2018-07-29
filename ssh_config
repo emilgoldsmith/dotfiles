@@ -1,5 +1,5 @@
 Host gazelle_staging
-        HostName 159.89.170.49
+        HostName 159.65.199.106
         User main
 
 Host gazelle_production

@@ -11,6 +11,7 @@ alias postman="setsid ~/.Postman/Postman && sleep 1 && exit"
 alias gazelle-setup="gazelle-setup.sh"
 alias architect="setsid java -jar ~/.sql-architect/architect.jar && sleep 1 && exit"
 alias vim="nvim"
+alias add="git add -Ap && git status"
 export GRADLE_OPTS=-Dorg.gradle.daemon=true
 export PATH=${PATH}:~/.pypy/bin/
 export PATH=${PATH}:~/bin/
