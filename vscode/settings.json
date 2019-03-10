@@ -11,47 +11,33 @@
     "**/node_modules": true
   },
   "javascript.suggestionActions.enabled": false,
-  "window.zoomLevel": -0.001,
+  "window.zoomLevel": 0,
   "vim.otherModesKeyBindingsNonRecursive": [
     {
-      "before": [
-        "j"
-      ],
-      "after": [
-        "g",
-        "j"
-      ]
+      "before": ["j"],
+      "after": ["g", "j"]
     },
     {
-      "before": [
-        "k"
-      ],
-      "after": [
-        "g",
-        "k"
-      ]
+      "before": ["k"],
+      "after": ["g", "k"]
     }
   ],
   "vim.otherModesKeyBindings": [
     {
-      "before": [
-        "u"
-      ],
+      "before": ["u"],
       "after": [],
       "commands": [
         {
-          "command": "undo",
+          "command": "undo"
         }
       ]
     },
     {
-      "before": [
-        "<C-r>",
-      ],
+      "before": ["<C-r>"],
       "after": [],
       "commands": [
         {
-          "command": "redo",
+          "command": "redo"
         }
       ]
     }
@@ -67,6 +53,7 @@
     "aiden",
     "crowdsource",
     "falcor",
+    "geocode",
     "github",
     "github's",
     "modularization",
@@ -80,5 +67,10 @@
     "upvoted"
   ],
   "typescript.updateImportsOnFileMove.enabled": "never",
-  "terminal.integrated.rendererType": "dom",
+  "eslint.autoFixOnSave": true,
+  "C_Cpp.clang_format_fallbackStyle": "Google",
+  "[cpp]": {
+    "editor.acceptSuggestionOnCommitCharacter": false
+  },
+  "editor.acceptSuggestionOnCommitCharacter": false
 }
