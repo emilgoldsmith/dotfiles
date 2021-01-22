@@ -1,76 +1,18 @@
 {
   "editor.tabSize": 2,
-  "editor.detectIndentation": false,
   "editor.formatOnSave": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "editor.wordWrap": "on",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "files.insertFinalNewline": true,
-  "files.exclude": {
-    "**/node_modules": true
-  },
-  "javascript.suggestionActions.enabled": false,
-  "window.zoomLevel": 0,
-  "vim.otherModesKeyBindingsNonRecursive": [
-    {
-      "before": ["j"],
-      "after": ["g", "j"]
-    },
-    {
-      "before": ["k"],
-      "after": ["g", "k"]
-    }
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.acceptSuggestionOnEnter": "off",
+  "breadcrumbs.enabled": true,
+  "files.eol": "\n",
+  "explorer.confirmDragAndDrop": false,
+  "remote.containers.defaultExtensions": [
+    "eamodio.gitlens",
+    "jpotterm.simple-vim"
   ],
-  "vim.otherModesKeyBindings": [
-    {
-      "before": ["u"],
-      "after": [],
-      "commands": [
-        {
-          "command": "undo"
-        }
-      ]
-    },
-    {
-      "before": ["<C-r>"],
-      "after": [],
-      "commands": [
-        {
-          "command": "redo"
-        }
-      ]
-    }
-  ],
-  "gitlens.advanced.messages": {
-    "suppressShowKeyBindingsNotice": true
-  },
-  "workbench.startupEditor": "newUntitledFile",
-  "[javascriptreact]": {},
-  "javascript.updateImportsOnFileMove.enabled": "never",
-  "cSpell.userWords": [
-    "abramov",
-    "aiden",
-    "crowdsource",
-    "falcor",
-    "geocode",
-    "github",
-    "github's",
-    "modularization",
-    "modularized",
-    "modularizing",
-    "onboarding",
-    "presentational",
-    "quora",
-    "rebasing",
-    "regexes",
-    "upvoted"
-  ],
-  "typescript.updateImportsOnFileMove.enabled": "never",
-  "eslint.autoFixOnSave": true,
-  "C_Cpp.clang_format_fallbackStyle": "Google",
-  "[cpp]": {
-    "editor.acceptSuggestionOnCommitCharacter": false
-  },
-  "editor.acceptSuggestionOnCommitCharacter": false
 }

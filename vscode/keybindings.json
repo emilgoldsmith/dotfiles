@@ -1,75 +1,27 @@
-// Place your key bindings in this file to overwrite the defaults
 [
   {
-    "key": "ctrl+w",
-    "command": "-extension.vim_ctrl+w",
-    "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
-  },
-  {
-    "key": "ctrl+w j",
-    "command": "-extension.vim_navigateDown",
-    "when": "vim.active && vim.use<C-w> && !editorTextFocus"
-  },
-  {
-    "key": "ctrl+w ctrl+w",
-    "command": "-extension.vim_navigateGroups",
-    "when": "vim.active && vim.use<C-w> && !editorTextFocus"
-  },
-  {
-    "key": "ctrl+w h",
-    "command": "-extension.vim_navigateLeft",
-    "when": "vim.active && vim.use<C-w> && !editorTextFocus"
-  },
-  {
-    "key": "ctrl+w l",
-    "command": "-extension.vim_navigateRight",
-    "when": "vim.active && vim.use<C-w> && !editorTextFocus"
-  },
-  {
-    "key": "ctrl+w k",
-    "command": "-extension.vim_navigateUp",
-    "when": "vim.active && vim.use<C-w> && !editorTextFocus"
+    "key": "ctrl+f",
+    "command": "-extension.simpleVim.scrollDownPage",
+    "when": "editorTextFocus && !extension.simpleVim.insertMode"
   },
   {
     "key": "ctrl+b",
-    "command": "-extension.vim_ctrl+b",
-    "when": "editorTextFocus && vim.active && vim.use<C-b> && !inDebugRepl && vim.mode != 'Insert'"
+    "command": "-extension.simpleVim.scrollUpPage",
+    "when": "editorTextFocus && !extension.simpleVim.insertMode"
   },
   {
-    "key": "ctrl+f",
-    "command": "-extension.vim_ctrl+f",
-    "when": "editorTextFocus && vim.active && vim.use<C-f> && !inDebugRepl"
-  },
-  {
-    "key": "ctrl+r",
-    "command": "-extension.vim_ctrl+r",
-    "when": "editorTextFocus && vim.active && vim.use<C-r> && !inDebugRepl"
-  },
-  {
-    "key": "ctrl+y",
-    "command": "-extension.vim_ctrl+y",
-    "when": "editorTextFocus && vim.active && vim.use<C-y> && !inDebugRepl"
-  },
-  {
-    "key": "ctrl+u",
-    "command": "-extension.vim_ctrl+u",
-    "when": "editorTextFocus && vim.active && vim.use<C-u> && !inDebugRepl"
-  },
-  {
-    "key": "ctrl+r",
-    "command": "-workbench.action.openRecent"
-  },
-  {
-    "key": "ctrl+shift+g g",
-    "command": "workbench.view.scm"
-  },
-  {
-    "key": "ctrl+shift+g",
-    "command": "-workbench.view.scm"
+    "key": "ctrl+d",
+    "command": "-extension.simpleVim.scrollDownHalfPage",
+    "when": "editorTextFocus && !extension.simpleVim.insertMode"
   },
   {
     "key": "ctrl+k",
-    "command": "-extension.vim_ctrl+k",
-    "when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
+    "command": "deleteAllRight",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "shift+j",
+    "command": "editor.action.joinLines",
+    "when": "editorTextFocus && !extension.simpleVim.insertMode"
   }
 ]

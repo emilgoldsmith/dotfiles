@@ -1,12 +1,10 @@
 [user]
 	name = Emil Goldsmith Olesen
 	email = emilgoldsmith94@gmail.com
-	signingkey = A78D0358
 [push]
 	default = simple
 [core]
 	editor = vim
-	excludesfile = /home/emil/.gitignore_global
 [diff]
 	renames = true
 [status]
