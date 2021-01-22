@@ -16,6 +16,6 @@
     "jpotterm.simple-vim"
   ],
   "dotfiles.repository": "https://github.com/emilgoldsmith/dotfiles.git",
-  "dotfiles.installCommand": "bash ~/dotfiles/install.sh",
+  "dotfiles.installCommand": "~/dotfiles/install.sh",
   "remote.containers.workspaceMountConsistency": "delegated",
 }

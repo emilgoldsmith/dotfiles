@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set -euo pipefail
 
 relative_dotfiles_dir=$(dirname "${BASH_SOURCE[0]}")
