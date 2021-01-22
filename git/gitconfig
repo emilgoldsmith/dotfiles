@@ -9,3 +9,5 @@
 	renames = true
 [status]
 	showUntrackedFiles = all
+[pull]
+	rebase = false
