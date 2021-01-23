@@ -8,7 +8,7 @@ case $- in
       *) return;;
 esac
 
-source ~/dotilfes_helpers/shell_options.sh
+source ~/dotfiles_helpers/shell_options.sh
 source ~/dotfiles_helpers/alias.sh
 source ~/dotfiles_helpers/env.sh
 source ~/dotfiles_helpers/prompt.sh
