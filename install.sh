@@ -9,6 +9,7 @@ mkdir -p ~/dotfiles_helpers
 
 # Bashrc stuff
 ln -svf $dotfiles_dir/bash/alias.sh ~/dotfiles_helpers/alias.sh
+ln -svf $dotfiles_dir/bash/shell_options.sh ~/dotfiles_helpers/shell_options.sh
 ln -svf $dotfiles_dir/bash/env.sh ~/dotfiles_helpers/env.sh
 ln -svf $dotfiles_dir/bash/prompt.sh ~/dotfiles_helpers/prompt.sh
 ln -svf $dotfiles_dir/bash/functions.sh ~/dotfiles_helpers/functions.sh
