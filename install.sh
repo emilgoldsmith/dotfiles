@@ -14,6 +14,7 @@ ln -svf $dotfiles_dir/bash/prompt.sh ~/dotfiles_helpers/prompt.sh
 ln -svf $dotfiles_dir/bash/functions.sh ~/dotfiles_helpers/functions.sh
 ln -svf $dotfiles_dir/bash/scripts ~/dotfiles_helpers/scripts
 ln -svf $dotfiles_dir/bash/bashrc.sh ~/.bashrc
+ln -svf $dotfiles_dir/bash/bashrc.sh ~/.bash_profile
 # Git
 ln -svf $dotfiles_dir/git/gitconfig ~/.gitconfig
 # SSH

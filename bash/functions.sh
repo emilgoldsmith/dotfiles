@@ -94,8 +94,10 @@ function commit_any_dotfile_changes () {
   git diff --quiet --exit-code
   if [[ $? == "1" ]]; then
     # It has changes
-    echo "Committing the following changes to the dotfiles repo"
-    sleep 3
+    echo "Changes discovered in your dotfiles repo. Waiting for internet to be able to commit and push the changes to the remote"
+    wait-for-internet
+    echo "The following changes are what will be committed to the dotfiles repo:"
+    sleep 1.5
     git --no-pager diff
     sleep 3
     git add -A
