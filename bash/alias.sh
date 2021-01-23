@@ -7,4 +7,3 @@ alias reset-wifi="sudo service network-manager restart && exit"
 alias signal="setsid signal-desktop && sleep 3 && exit"
 alias add="git add -Ap && git status"
 alias code='GTK_IM_MODULE="xim" code'
-alias python='python3'

@@ -15,11 +15,6 @@
     "when": "editorTextFocus && !extension.simpleVim.insertMode"
   },
   {
-    "key": "ctrl+k",
-    "command": "deleteAllRight",
-    "when": "terminalFocus"
-  },
-  {
     "key": "shift+j",
     "command": "editor.action.joinLines",
     "when": "editorTextFocus && !extension.simpleVim.insertMode"

@@ -74,3 +74,32 @@ function ogv-to-mp4 () {
           "${FNAME%.[^.]*}.mp4"
   fi
 }
+
+function py () {
+  version=$(python --version 2>&1)
+  if [[ $version == "Python 3."* ]]; then
+    python $@
+  else
+    python3 $@
+  fi
+}
+
+function commit_any_dotfile_changes () {
+  # Enter the dotfiles dir to check for any changes
+  functions_file=$(realpath "${BASH_SOURCE[0]}")
+  dotfiles_dir=$(dirname $functions_file)/..
+  cd $dotfiles_dir
+
+  # This has exit code one if there are any differences
+  git diff --quiet --exit-code
+  if [[ $? == "1" ]]; then
+    # It has changes
+    echo "Committing the following changes to the dotfiles repo"
+    sleep 3
+    git --no-pager diff
+    sleep 3
+    git add -A
+    git commit -m "Automatic commit for changes of dotfiles"
+    git push
+  fi
+}
