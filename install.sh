@@ -28,6 +28,8 @@ ln -svf $dotfiles_dir/vim/vim-packages ~/.vim
 echo $REMOTE_CONTAINERS
 if [ ! -z ${REMOTE_CONTAINERS+x} ];
 then
+  echo "FOUND IT!"
+  echo ${REMOTE_CONTAINERS+x}
   ln -svf $dotfiles_dir/vscode/keybindings.json ~/.config/Code/User/keybindings.json
   ln -svf $dotfiles_dir/vscode/settings.json ~/.config/Code/User/settings.json
 fi
