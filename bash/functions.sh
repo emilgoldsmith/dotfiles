@@ -85,6 +85,8 @@ function py () {
 }
 
 function commit_any_dotfile_changes () {
+  # Save current directory so we can return to it
+  current_dir=$(pwd)
   # Enter the dotfiles dir to check for any changes
   functions_file=$(realpath "${BASH_SOURCE[0]}")
   dotfiles_dir=$(dirname $functions_file)/..
@@ -104,4 +106,6 @@ function commit_any_dotfile_changes () {
     git commit -m "Automatic commit for changes of dotfiles"
     git push
   fi
+  # Return to the directory you were in before
+  cd $current_dir
 }
