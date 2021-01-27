@@ -86,8 +86,9 @@ function py () {
 
 function commit_any_dotfile_changes () {
   # Don't commit any changes if we're in a VSCode remote container
-  if [ ! -z ${REMOTE_CONTAINERS+x} ];
+  if [[ -n $REMOTE_CONTAINERS ]];
   then
+    echo "HERE"
     return 0
   fi
   # Save current directory so we can return to it

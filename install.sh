@@ -26,7 +26,7 @@ ln -svf $dotfiles_dir/vim/vim-packages ~/.vim
 # VSCode
 # VSCode not needed if we're in a VSCode remote container
 echo $REMOTE_CONTAINERS
-if [ ! -z ${REMOTE_CONTAINERS+x} ];
+if [ -n ${REMOTE_CONTAINERS+x} ];
 then
   echo "FOUND IT!"
   echo ${REMOTE_CONTAINERS+x}
