@@ -33,6 +33,6 @@ fi
 
 if [[ -n $REMOTE_CONTAINERS ]];
 then
-  who
+  echo $USER
   apt-get install vim
 fi
