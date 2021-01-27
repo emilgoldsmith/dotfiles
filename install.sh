@@ -24,8 +24,12 @@ ln -svf $dotfiles_dir/ssh/ssh_config ~/.ssh/config
 ln -svf $dotfiles_dir/vim/vimrc ~/.vimrc
 ln -svf $dotfiles_dir/vim/vim-packages ~/.vim
 # VSCode
-ln -svf $dotfiles_dir/vscode/keybindings.json ~/.config/Code/User/keybindings.json
-ln -svf $dotfiles_dir/vscode/settings.json ~/.config/Code/User/settings.json
+# VSCode not needed if we're in a VSCode remote container
+if [ -z ${REMOTE_CONTAINERS+x} ];
+then
+  ln -svf $dotfiles_dir/vscode/keybindings.json ~/.config/Code/User/keybindings.json
+  ln -svf $dotfiles_dir/vscode/settings.json ~/.config/Code/User/settings.json
+fi
 
 # And now we install the programs needed for the terminal to run
 bash $dotfiles_dir/install_terminal_need_to_haves.sh
