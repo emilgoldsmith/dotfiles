@@ -30,9 +30,3 @@ then
   ln -svf $dotfiles_dir/vscode/keybindings.json ~/.config/Code/User/keybindings.json
   ln -svf $dotfiles_dir/vscode/settings.json ~/.config/Code/User/settings.json
 fi
-
-if [[ -n $REMOTE_CONTAINERS ]];
-then
-  apt-get update
-  apt-get -y install vim
-fi
