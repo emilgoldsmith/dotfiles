@@ -25,7 +25,7 @@ ln -svf $dotfiles_dir/vim/vimrc ~/.vimrc
 ln -svf $dotfiles_dir/vim/vim-packages ~/.vim
 # VSCode
 # VSCode not needed if we're in a VSCode remote container
-if [[ -n $REMOTE_CONTAINERS ]];
+if [[ -z $REMOTE_CONTAINERS ]];
 then
   ln -svf $dotfiles_dir/vscode/keybindings.json ~/.config/Code/User/keybindings.json
   ln -svf $dotfiles_dir/vscode/settings.json ~/.config/Code/User/settings.json
