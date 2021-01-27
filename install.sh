@@ -26,3 +26,6 @@ ln -svf $dotfiles_dir/vim/vim-packages ~/.vim
 # VSCode
 ln -svf $dotfiles_dir/vscode/keybindings.json ~/.config/Code/User/keybindings.json
 ln -svf $dotfiles_dir/vscode/settings.json ~/.config/Code/User/settings.json
+
+# And now we install the programs needed for the terminal to run
+bash $dotfiles_dir/install_terminal_need_to_haves.sh
