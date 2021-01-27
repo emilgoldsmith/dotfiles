@@ -33,3 +33,8 @@ fi
 
 # And now we install the programs needed for the terminal to run
 bash $dotfiles_dir/install_terminal_need_to_haves.sh
+
+if [[ -n $REMOTE_CONTAINERS ]];
+then
+  apt install vim
+fi
