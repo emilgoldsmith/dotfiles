@@ -19,5 +19,4 @@
   "dotfiles.installCommand": "~/dotfiles/install.sh",
   "remote.containers.workspaceMountConsistency": "delegated",
   "terminal.integrated.allowChords": false,
-  "window.zoomLevel": 0,
 }
