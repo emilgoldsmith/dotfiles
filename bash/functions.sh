@@ -114,3 +114,7 @@ function commit_any_dotfile_changes () {
   # Return to the directory you were in before
   cd $current_dir
 }
+
+function commitAll() {
+  git add -A && git commit -m $1
+}
