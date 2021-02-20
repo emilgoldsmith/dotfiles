@@ -41,8 +41,7 @@ function delete-stale-local-git-branches () {
 }
 
 function disable-trackpoint () {
-  xinput set-prop "TPPS/2 IBM TrackPoint" 264 1000000000000
-  xinput set-prop "TPPS/2 IBM TrackPoint" 265 1000000000000
+  xinput set-prop "TPPS/2 IBM TrackPoint" 168 0
 }
 
 function running-calculator () {
