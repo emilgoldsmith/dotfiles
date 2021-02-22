@@ -5,6 +5,7 @@
 	default = simple
 [core]
 	editor = vim
+	excludesFile = ~/.gitignore.global
 [diff]
 	renames = true
 [status]

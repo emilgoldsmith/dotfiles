@@ -18,6 +18,7 @@ ln -svf $dotfiles_dir/bash/bashrc.sh ~/.bashrc
 ln -svf $dotfiles_dir/bash/bashrc.sh ~/.bash_profile
 # Git
 ln -svf $dotfiles_dir/git/gitconfig ~/.gitconfig
+ln -svf $dotfiles_dir/git/global-gitignore ~/.gitignore.global
 # SSH
 ln -svf $dotfiles_dir/ssh/ssh_config ~/.ssh/config
 # Vim
