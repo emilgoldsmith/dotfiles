@@ -55,9 +55,10 @@ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/v
 
 sudo apt install -y code
 
-# Install our extensions
+# Install our VSCode extensions
 
-code --install-extensions jpotterm.simple-vim ms-vscode-remote.remote-containers
+code --install-extension jpotterm.simple-vim
+code --install-extension ms-vscode-remote.remote-containers
 
 ########### Install Chrome
 
@@ -68,3 +69,15 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install -y ./google-chrome-stable_current_amd64.deb
 
 rm ./google-chrome-stable_current_amd64.deb
+
+########## Install Signal
+
+# Taken from https://vitux.com/signal-messenger-ubuntu/
+
+wget -O- https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
+
+echo “deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main” | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
+
+sudo apt update -y
+sudo apt install -y signal-desktop
+
