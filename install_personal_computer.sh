@@ -55,6 +55,10 @@ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/v
 
 sudo apt install -y code
 
+# Install our extensions
+
+code --install-extensions jpotterm.simple-vim ms-vscode-remote.remote-containers
+
 ########### Install Chrome
 
 # Taken from https://linuxize.com/post/how-to-install-google-chrome-web-browser-on-ubuntu-20-04/
