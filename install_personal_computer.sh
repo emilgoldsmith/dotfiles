@@ -64,11 +64,12 @@ code --install-extension ms-vscode-remote.remote-containers
 
 # Taken from https://linuxize.com/post/how-to-install-google-chrome-web-browser-on-ubuntu-20-04/
 
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-
-sudo apt install -y ./google-chrome-stable_current_amd64.deb
-
-rm ./google-chrome-stable_current_amd64.deb
+# Only do it if not already installed though
+which google-chrome || (\
+  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+  sudo apt install -y ./google-chrome-stable_current_amd64.deb && \
+  rm ./google-chrome-stable_current_amd64.deb \
+)
 
 ########## Install Signal
 
@@ -76,7 +77,7 @@ rm ./google-chrome-stable_current_amd64.deb
 
 wget -O- https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
 
-echo “deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main” | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
+echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee /etc/apt/sources.list.d/signal-xenial.list
 
 sudo apt update -y
 sudo apt install -y signal-desktop
