@@ -54,3 +54,13 @@ wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 
 sudo apt install -y code
+
+########### Install Chrome
+
+# Taken from https://linuxize.com/post/how-to-install-google-chrome-web-browser-on-ubuntu-20-04/
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+sudo apt install -y ./google-chrome-stable_current_amd64.deb
+
+rm ./google-chrome-stable_current_amd64.deb
