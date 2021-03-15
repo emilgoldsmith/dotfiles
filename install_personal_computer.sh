@@ -82,3 +82,15 @@ echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sud
 sudo apt update -y
 sudo apt install -y signal-desktop
 
+
+######### Just a bit of a message
+
+echo
+echo
+echo
+echo "TAKE NOTICE:"
+echo "In order to run docker without sudo you have to restart the computer"
+echo
+echo
+echo
+
