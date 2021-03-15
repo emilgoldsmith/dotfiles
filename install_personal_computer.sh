@@ -42,7 +42,3 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io
 # Allow us to run without sudo
 sudo groupadd --force docker
 sudo usermod -aG docker $USER
-# Activate it now without having to login again
-newgrp docker
-
-docker run hello-world
