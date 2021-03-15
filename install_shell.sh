@@ -21,6 +21,7 @@ ln -svf $dotfiles_dir/git/gitconfig ~/.gitconfig
 mkdir -p ~/.config/git
 ln -svf $dotfiles_dir/git/global-gitignore ~/.config/git/ignore
 # SSH
+mkdir -p ~/.ssh
 ln -svf $dotfiles_dir/ssh/ssh_config ~/.ssh/config
 # Vim
 ln -svf $dotfiles_dir/vim/vimrc ~/.vimrc
@@ -31,6 +32,7 @@ set +u
 if [[ -z $REMOTE_CONTAINERS ]];
 then
   set -u
+  mkdir -p ~/.config/Code/User
   ln -svf $dotfiles_dir/vscode/keybindings.json ~/.config/Code/User/keybindings.json
   ln -svf $dotfiles_dir/vscode/settings.json ~/.config/Code/User/settings.json
 fi
