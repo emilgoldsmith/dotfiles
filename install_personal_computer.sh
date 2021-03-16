@@ -82,6 +82,16 @@ echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sud
 sudo apt update -y
 sudo apt install -y signal-desktop
 
+############ Install Spotify
+
+# Taken from https://linuxize.com/post/how-to-install-spotify-on-ubuntu-20-04/
+
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 4773BD5E130D1D45
+
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+
+sudo apt update -y
+sudo apt install -y spotify-client
 
 ######### Just a bit of a message
 
