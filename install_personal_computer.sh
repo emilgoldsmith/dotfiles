@@ -84,9 +84,9 @@ sudo apt install -y signal-desktop
 
 ############ Install Spotify
 
-# Taken from https://linuxize.com/post/how-to-install-spotify-on-ubuntu-20-04/
+# Taken from https://www.spotify.com/nz/download/linux/
 
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 4773BD5E130D1D45
+curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
 
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 
