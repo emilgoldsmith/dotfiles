@@ -93,16 +93,32 @@ echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sou
 sudo apt update -y
 sudo apt install -y spotify-client
 
-######## Install NVM
+######## Install nvm and Node
 
 # Script is very small and doesn't install anything if already installed
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 
-# Activate nvm if not already activated
-command -v nvm || . ~/.nvm/nvm.sh
+# Activate nvm
+. ~/.nvm/nvm.sh
 
 # Install latest version of node
+# Until the fix for this is released we have to remove unset variables here
+# reference: https://github.com/nvm-sh/nvm/issues/2420
+set +u
 nvm install node
+set -u
+
+########### Install Yarn
+
+# Taken from https://linuxize.com/post/how-to-install-yarn-on-ubuntu-20-04/
+
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+sudo apt update -y
+# No install recommends skips the node installation, since we already have node
+sudo apt install -y --no-install-recommends yarn
 
 ######### Just a bit of a message
 
