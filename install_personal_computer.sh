@@ -93,6 +93,17 @@ echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sou
 sudo apt update -y
 sudo apt install -y spotify-client
 
+######## Install NVM
+
+# Script is very small and doesn't install anything if already installed
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+
+# Activate nvm if not already activated
+command -v nvm || . ~/.nvm/nvm.sh
+
+# Install latest version of node
+nvm install node
+
 ######### Just a bit of a message
 
 echo
