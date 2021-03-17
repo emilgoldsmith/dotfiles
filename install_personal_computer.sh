@@ -130,6 +130,17 @@ test -d ~/.dropbox-dist || (\
   && screen -d -m ~/.dropbox-dist/dropboxd \
 )
 
+########### Install Zoom
+
+# Taken from https://linuxize.com/post/how-to-install-zoom-on-ubuntu-20-04/
+
+# Only do it if not already installed
+which zoom || (\
+  wget https://zoom.us/client/latest/zoom_amd64.deb && \
+  sudo apt install ./zoom_amd64.deb && \
+  rm ./zoom_amd64.deb \
+)
+
 ######### Just a bit of a message
 
 echo
