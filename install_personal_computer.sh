@@ -120,6 +120,16 @@ sudo apt update -y
 # No install recommends skips the node installation, since we already have node
 sudo apt install -y --no-install-recommends yarn
 
+########### Install Dropbox
+
+# Headless version taken from https://www.dropbox.com/install-linux
+
+# Only do this if not already installed
+test -d ~/.dropbox-dist || (\
+  cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf - \
+  && screen -d -m ~/.dropbox-dist/dropboxd \
+)
+
 ######### Just a bit of a message
 
 echo
