@@ -153,6 +153,18 @@ which elm || (\
   chmod +x elm && \
   sudo mv elm /usr/local/bin/ \
 )
+
+########### Install Skype
+
+# Taken from https://linuxize.com/post/how-to-install-skype-on-ubuntu-20-04/
+
+# Only do it if not already installed
+which skype || (\
+  wget https://go.skype.com/skypeforlinux-64.deb && \
+  sudo apt install ./skypeforlinux-64.deb && \
+  rm ./skypeforlinux-64.deb \
+)
+
 ######### Just a bit of a message
 
 echo
