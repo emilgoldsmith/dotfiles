@@ -18,6 +18,5 @@
   "dotfiles.repository": "https://github.com/emilgoldsmith/dotfiles.git",
   "dotfiles.installCommand": "~/dotfiles/install_shell.sh",
   "remote.containers.workspaceMountConsistency": "delegated",
-  "terminal.integrated.allowChords": false,
-  "terminal.integrated.sendKeybindingsToShell": true,
+  "terminal.integrated.allowChords": false
 }
