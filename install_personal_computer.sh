@@ -13,7 +13,8 @@ sudo apt install -y \
 
 sudo apt install -y \
   git \
-  screen
+  screen \
+  htop
 
 ######## Install Docker
 
