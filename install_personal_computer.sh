@@ -14,7 +14,8 @@ sudo apt install -y \
 sudo apt install -y \
   git \
   screen \
-  htop
+  htop \
+  xclip
 
 ######## Install Docker
 

@@ -7,6 +7,7 @@ alias spotify="screen -d -m spotify && exit"
 alias reset-wifi="sudo service network-manager restart && exit"
 alias signal="screen -d -m signal-desktop && exit"
 alias add="git add -Ap && git status"
+alias copy="xclip -sel clip"
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
