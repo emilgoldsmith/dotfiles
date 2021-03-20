@@ -2,6 +2,7 @@ alias chrome="wait-for-internet && screen -d -m google-chrome --disable-gpu-driv
 alias firefox="wait-for-internet && screen -d -m firefox && exit"
 alias firefox-no-verify="screen -d -m firefox && exit"
 alias skype="screen -d -m skypeforlinux && exit"
+alias python="python3"
 alias chrome-no-verify="screen -d -m google-chrome --disable-gpu-driver-bug-workarounds --enable-native-gpu-memory-buffers --enable-devtools-experiments && exit"
 alias spotify="screen -d -m spotify && exit"
 alias reset-wifi="sudo service network-manager restart && exit"
