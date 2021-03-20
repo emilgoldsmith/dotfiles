@@ -94,7 +94,7 @@ function commit_any_dotfile_changes () {
   # Enter the dotfiles dir to check for any changes
   functions_file=$(realpath "${BASH_SOURCE[0]}")
   dotfiles_dir=$(dirname $functions_file)/..
-  cd $dotfiles_dir
+  cd "$dotfiles_dir"
 
   # This has exit code one if there are any differences
   git diff --quiet --exit-code
@@ -111,7 +111,7 @@ function commit_any_dotfile_changes () {
     git push
   fi
   # Return to the directory you were in before
-  cd $current_dir
+  cd "$current_dir"
 }
 
 function commitAll() {
