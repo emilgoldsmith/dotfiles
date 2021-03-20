@@ -15,7 +15,9 @@ sudo apt install -y \
   git \
   screen \
   htop \
-  xclip
+  xclip \
+  make \
+  g++
 
 ######## Install Docker
 
