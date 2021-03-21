@@ -64,6 +64,8 @@ sudo apt install -y code
 
 code --install-extension jpotterm.simple-vim
 code --install-extension ms-vscode-remote.remote-containers
+code --install-extension ms-vscode.cpptools
+code --install-extension ms-python.python
 
 ########### Install Chrome
 
