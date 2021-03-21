@@ -17,7 +17,8 @@ sudo apt install -y \
   htop \
   xclip \
   make \
-  g++
+  g++ \
+  python3-pip
 
 ######## Install Docker
 
