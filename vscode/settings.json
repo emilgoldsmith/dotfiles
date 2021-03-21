@@ -21,5 +21,11 @@
   "terminal.integrated.allowChords": false,
   "terminal.integrated.commandsToSkipShell": [
     "workbench.action.toggleSidebarVisibility"
+  ],
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
   ]
 }
