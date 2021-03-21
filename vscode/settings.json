@@ -27,5 +27,6 @@
       "viewType": "jupyter.notebook.ipynb",
       "filenamePattern": "*.ipynb"
     }
-  ]
+  ],
+  "python.formatting.provider": "black"
 }
