@@ -19,7 +19,8 @@ sudo apt install -y \
   make \
   g++ \
   python3-pip \
-  net-tools
+  net-tools \
+  vlc
 
 ######## Install Docker
 
