@@ -172,6 +172,17 @@ which skype || (\
   rm ./skypeforlinux-64.deb \
 )
 
+
+########### Install Windscribe
+
+# Taken from https://windscribe.com/guides/linux
+
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key FDC247B7
+echo 'deb https://repo.windscribe.com/ubuntu bionic main' | sudo tee /etc/apt/sources.list.d/windscribe-repo.list
+
+sudo apt update -y
+sudo apt install -y windscribe-cli
+
 ######### Just a bit of a message
 
 echo
