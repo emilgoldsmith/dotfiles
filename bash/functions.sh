@@ -44,6 +44,10 @@ function disable-trackpoint () {
   xinput set-prop "TPPS/2 IBM TrackPoint" 176 0
 }
 
+function enable-trackpoint () {
+  xinput set-prop "TPPS/2 IBM TrackPoint" 176 1
+}
+
 function running-calculator () {
   python ~/dotfiles_helpers/scripts/running-calculator.py
 }
