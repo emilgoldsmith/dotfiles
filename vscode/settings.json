@@ -8,6 +8,8 @@
   "files.insertFinalNewline": true,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.acceptSuggestionOnEnter": "off",
+  "workbench.editor.decorations.badges": false,
+  "workbench.editor.decorations.colors": false,
   "breadcrumbs.enabled": true,
   "files.eol": "\n",
   "explorer.confirmDragAndDrop": false,
