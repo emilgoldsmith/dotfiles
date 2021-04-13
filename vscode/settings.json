@@ -30,6 +30,5 @@
       "filenamePattern": "*.ipynb"
     }
   ],
-  "python.formatting.provider": "black",
-  "window.zoomLevel": 1
+  "python.formatting.provider": "black"
 }
