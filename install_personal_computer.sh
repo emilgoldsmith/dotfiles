@@ -22,6 +22,10 @@ sudo apt install -y \
   net-tools \
   vlc
 
+###### Install Postman
+
+sudo snap install postman
+
 ######## Install Docker
 
 # Docker dependencies
