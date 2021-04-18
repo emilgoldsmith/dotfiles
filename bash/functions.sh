@@ -101,7 +101,7 @@ function commit_any_dotfile_changes () {
   cd "$dotfiles_dir"
 
   # This has exit code one if there are any differences
-  git diff --quiet --exit-code
+  output=$(git status --porcelain) && [ -z "$output" ]
   if [[ $? == "1" ]]; then
     # It has changes
     echo "Changes discovered in your dotfiles repo. Waiting for internet to be able to commit and push the changes to the remote"
@@ -109,6 +109,7 @@ function commit_any_dotfile_changes () {
     echo "The following changes are what will be committed to the dotfiles repo:"
     sleep 1.5
     git --no-pager diff
+    git status
     sleep 3
     git add -A
     git commit -m "Automatic commit for changes of dotfiles"
