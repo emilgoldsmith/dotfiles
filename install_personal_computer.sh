@@ -54,6 +54,9 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io
 sudo groupadd --force docker
 sudo usermod -aG docker $USER
 
+# Set buildx as the default builder (much faster)
+docker buildx install
+
 ########## Install VSCode
 
 # Taken from https://linuxize.com/post/how-to-install-visual-studio-code-on-ubuntu-20-04/
