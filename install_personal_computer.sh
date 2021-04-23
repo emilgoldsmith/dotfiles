@@ -37,7 +37,7 @@ sudo apt install -y \
   lsb-release
 
 # Add GPG key
-sudo rm /usr/share/keyrings/docker-archive-keyring.gpg && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+sudo rm --force /usr/share/keyrings/docker-archive-keyring.gpg && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
 # Add the repository
 echo \
@@ -153,7 +153,7 @@ test -d ~/.dropbox-dist || (\
 # Only do it if not already installed
 which zoom || (\
   wget https://zoom.us/client/latest/zoom_amd64.deb && \
-  sudo apt install ./zoom_amd64.deb && \
+  sudo apt install -y ./zoom_amd64.deb && \
   rm ./zoom_amd64.deb \
 )
 
@@ -201,4 +201,3 @@ echo "In order to run docker without sudo you have to restart the computer"
 echo
 echo
 echo
-
