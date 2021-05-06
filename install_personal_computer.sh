@@ -191,6 +191,12 @@ echo 'deb https://repo.windscribe.com/ubuntu bionic main' | sudo tee /etc/apt/so
 sudo apt update -y
 sudo apt install -y windscribe-cli
 
+############ Install thefuck for shell
+
+sudo apt update -y
+sudo apt install -y python3-dev python3-pip python3-setuptools
+sudo pip3 install thefuck
+
 ######### Just a bit of a message
 
 echo
