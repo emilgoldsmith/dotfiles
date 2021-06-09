@@ -32,5 +32,6 @@
   ],
   "python.formatting.provider": "black",
   "terminal.integrated.tabs.enabled": true,
-  "terminal.integrated.gpuAcceleration": "on"
+  "terminal.integrated.gpuAcceleration": "on",
+  "window.zoomLevel": -1
 }
