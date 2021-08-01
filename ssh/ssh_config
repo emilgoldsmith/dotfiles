@@ -1,0 +1,3 @@
+Host nyuad-discourse
+  HostName=167.99.212.117
+  User=root
