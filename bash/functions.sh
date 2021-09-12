@@ -42,11 +42,13 @@ function delete-stale-local-git-branches () {
 }
 
 function disable-trackpoint () {
-  xinput set-prop "TPPS/2 IBM TrackPoint" 176 0
+  PROP_NUMBER=$(xinput list-props "TPPS/2 IBM TrackPoint" | grep "Device Enabled" | sed 's/.*(\([0-9]*\)).*/\1/')
+  xinput set-prop "TPPS/2 IBM TrackPoint" $PROP_NUMBER 0
 }
 
 function enable-trackpoint () {
-  xinput set-prop "TPPS/2 IBM TrackPoint" 176 1
+  PROP_NUMBER=$(xinput list-props "TPPS/2 IBM TrackPoint" | grep "Device Enabled" | sed 's/.*(\([0-9]*\)).*/\1/')
+  xinput set-prop "TPPS/2 IBM TrackPoint" $PROP_NUMBER 1
 }
 
 function running-calculator () {
