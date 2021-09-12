@@ -25,6 +25,7 @@ function decrypt () {
 }
 
 function delete-stale-local-git-branches () {
+  git remote prune origin
   STALE_BRANCHES=$(git branch -vv | grep '\[.*/.*: gone\]' | awk '{print $1}')
 
   printf "Your stale branches are:\n"
