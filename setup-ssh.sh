@@ -2,6 +2,6 @@
 
 set -euo pipefail
 
-chmod 400 ~/.ssh/id_rsa*
+chmod 400 ~/.ssh/id_*
 
 ssh-add
