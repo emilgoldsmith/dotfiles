@@ -31,12 +31,6 @@
   },
   {
     "key": "ctrl+shift+[Backquote]",
-    "command": "workbench.action.terminal.openNativeConsole",
-    "when": "!terminalFocus"
-  },
-  {
-    "key": "ctrl+shift+c",
-    "command": "-workbench.action.terminal.openNativeConsole",
-    "when": "!terminalFocus"
+    "command": "workbench.action.terminal.newLocal"
   },
 ]
