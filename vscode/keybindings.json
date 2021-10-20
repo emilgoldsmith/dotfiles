@@ -31,6 +31,6 @@
   },
   {
     "key": "ctrl+shift+[Backquote]",
-    "command": "workbench.action.terminal.newLocal"
-  },
+    "command": "workbench.action.terminal.new"
+  }
 ]
