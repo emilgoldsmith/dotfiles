@@ -125,3 +125,8 @@ function commit_any_dotfile_changes () {
 function commitAll() {
   git add -A && git commit -m "$1"
 }
+
+function codeforces_contest_ratings() {
+  curl "https://codeforces.com/api/contest.standings?contestId=$1&from=1&count=1&showUnofficial=false" | node -e "const x = JSON.parse(require('fs').readFileSync('/dev/stdin', 'utf-8').toString());\
+    console.log({contestName: x.result.contest.name, problems: x.result.problems.map(y => {name: y.name, rating: y.rating})});"
+}
