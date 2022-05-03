@@ -146,6 +146,19 @@ test -d ~/.dropbox-dist || (\
   && screen -d -m ~/.dropbox-dist/dropboxd \
 )
 
+# Do this no matter what as it just overwrites the existing anyway
+mkdir -p ~/.config/autostart \
+  && echo "[Desktop Entry]
+Name=Dropbox
+GenericName=File Synchronizer
+Comment=Sync your files across computers and to the web
+Exec=/home/emil/.dropbox-dist/dropboxd
+Terminal=false
+Type=Application
+Icon=dropbox
+Categories=Network;FileTransfer;
+StartupNotify=false" > ~/.config/autostart/dropbox.desktop
+
 ########### Install Zoom
 
 # Taken from https://linuxize.com/post/how-to-install-zoom-on-ubuntu-20-04/
