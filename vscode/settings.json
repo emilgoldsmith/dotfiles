@@ -34,5 +34,6 @@
   "window.zoomLevel": -1,
   "terminal.integrated.enableMultiLinePasteWarning": false,
   "workbench.editor.highlightModifiedTabs": true,
-  "workbench.editor.wrapTabs": true
+  "workbench.editor.wrapTabs": true,
+  "editor.inlineSuggest.enabled": true
 }
