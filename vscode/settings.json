@@ -35,5 +35,8 @@
   "terminal.integrated.enableMultiLinePasteWarning": false,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.wrapTabs": true,
+  "files.associations": {
+    "*.ts": "typescript"
+  },
   "editor.inlineSuggest.enabled": true
 }
