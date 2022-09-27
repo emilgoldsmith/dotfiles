@@ -36,7 +36,8 @@
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.wrapTabs": true,
   "files.associations": {
-    "*.ts": "typescript"
+    "*.ts": "typescript",
+    "*.snap": "javascript"
   },
   "editor.inlineSuggest.enabled": true
 }
