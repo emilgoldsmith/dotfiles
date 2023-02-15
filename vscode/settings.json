@@ -39,10 +39,4 @@
   },
   "editor.inlineSuggest.enabled": true,
   "window.zoomLevel": -1,
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
 }
