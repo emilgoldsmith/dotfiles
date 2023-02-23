@@ -31,7 +31,6 @@
   "terminal.integrated.tabs.enabled": true,
   "terminal.integrated.gpuAcceleration": "on",
   "workbench.colorTheme": "Default Dark+",
-  "window.zoomLevel": -1,
   "terminal.integrated.enableMultiLinePasteWarning": false,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.wrapTabs": true,
@@ -39,5 +38,6 @@
     "*.ts": "typescript",
     "*.snap": "javascript"
   },
-  "editor.inlineSuggest.enabled": true
+  "editor.inlineSuggest.enabled": true,
+  "window.zoomLevel": -1,
 }
