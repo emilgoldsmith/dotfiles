@@ -25,3 +25,18 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+
+function handle_dot_nvm_file () {
+    nvm use &> /dev/null
+    retVal=$?
+    if [ $retVal -eq 3 ]; then
+        nvm install;
+    fi
+    if [ $retVal -eq 0 ]; then
+        echo "Node version applied via .nvmrc"
+}
+
+alias cd="cd; handle_dot_nvm_file"
+
+# Make sure we also check on initialization
+handle_dot_nvm_file
