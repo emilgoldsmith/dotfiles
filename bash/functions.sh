@@ -102,9 +102,6 @@ function commit_any_dotfile_changes () {
   functions_file=$(realpath "${BASH_SOURCE[0]}")
   dotfiles_dir=$(dirname $functions_file)/..
   cd "$dotfiles_dir"
-  echo $functions_file
-  echo $dotfiles_dir
-  echo $(pwd)
 
   # This has exit code one if there are any differences
   output=$(git status --porcelain) && [ -z "$output" ]
