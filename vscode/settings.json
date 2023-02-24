@@ -40,4 +40,7 @@
   },
   "editor.inlineSuggest.enabled": true,
   "window.zoomLevel": -1,
+  "[python]": {
+    "editor.formatOnType": true
+  },
 }
