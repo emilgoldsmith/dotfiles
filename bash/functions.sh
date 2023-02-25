@@ -130,3 +130,23 @@ function codeforces_contest_ratings() {
   curl "https://codeforces.com/api/contest.standings?contestId=$1&from=1&count=1&showUnofficial=false" | node -e "const x = JSON.parse(require('fs').readFileSync('/dev/stdin', 'utf-8').toString());\
     console.log({contestName: x.result.contest.name, problems: x.result.problems.map(y => ({name: y.name, rating: y.rating}))});"
 }
+
+
+function handle_dot_nvm_file () {
+    nvm use &> /dev/null
+    retVal=$?
+    if [ $retVal -eq 3 ]; then
+        nvm install;
+    fi
+    if [ $retVal -eq 0 ]; then
+        echo "Node version applied via .nvmrc"
+    fi
+}
+
+# Make sure we also check on initialization
+handle_dot_nvm_file
+
+function cd () {
+  builtin cd "$@"
+  handle_dot_nvm_file
+}

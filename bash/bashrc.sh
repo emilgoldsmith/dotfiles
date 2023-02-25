@@ -8,6 +8,12 @@ case $- in
       *) return;;
 esac
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+eval "$(thefuck --alias)"
+
 source ~/dotfiles_helpers/shell_options.sh
 source ~/dotfiles_helpers/alias.sh
 source ~/dotfiles_helpers/env.sh
@@ -16,9 +22,3 @@ source ~/dotfiles_helpers/functions.sh
 
 # Make sure our dotfiles repo is always up to date
 commit_any_dotfile_changes
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-eval "$(thefuck --alias)"
