@@ -8,19 +8,20 @@ sudo apt update -y
 
 # Vim and the gtk-3 which allows us to copy to clipboard in vim by installing the GUi drivers I believe
 sudo apt install -y \
-  vim \
-  vim-gtk3 \
+vim \
+vim-gtk3 \
 
 sudo apt install -y \
-  git \
-  screen \
-  htop \
-  xclip \
-  make \
-  g++ \
-  python3-pip \
-  net-tools \
-  vlc
+git \
+screen \
+htop \
+xclip \
+make \
+g++ \
+python3-pip \
+net-tools \
+vlc \
+ffmpeg
 
 ###### Install Postman
 
@@ -30,19 +31,19 @@ sudo snap install postman
 
 # Docker dependencies
 sudo apt install -y \
-  apt-transport-https \
-  ca-certificates \
-  curl \
-  gnupg \
-  lsb-release
+apt-transport-https \
+ca-certificates \
+curl \
+gnupg \
+lsb-release
 
 # Add GPG key
 sudo rm --force /usr/share/keyrings/docker-archive-keyring.gpg && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
 # Add the repository
 echo \
-  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+"deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 # Update for the new repository
 sudo apt update -y
@@ -82,9 +83,9 @@ code --install-extension ms-python.python
 
 # Only do it if not already installed though
 which google-chrome || (\
-  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
-  sudo apt install -y ./google-chrome-stable_current_amd64.deb && \
-  rm ./google-chrome-stable_current_amd64.deb \
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+    sudo apt install -y ./google-chrome-stable_current_amd64.deb && \
+    rm ./google-chrome-stable_current_amd64.deb \
 )
 
 ########## Install Signal
@@ -142,13 +143,13 @@ sudo apt install -y --no-install-recommends yarn
 
 # Only do this if not already installed
 test -d ~/.dropbox-dist || (\
-  cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf - \
-  && screen -d -m ~/.dropbox-dist/dropboxd \
+    cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf - \
+    && screen -d -m ~/.dropbox-dist/dropboxd \
 )
 
 # Do this no matter what as it just overwrites the existing anyway
 mkdir -p ~/.config/autostart \
-  && echo "[Desktop Entry]
+&& echo "[Desktop Entry]
 Name=Dropbox
 GenericName=File Synchronizer
 Comment=Sync your files across computers and to the web
@@ -165,9 +166,9 @@ StartupNotify=false" > ~/.config/autostart/dropbox.desktop
 
 # Only do it if not already installed
 which zoom || (\
-  wget https://zoom.us/client/latest/zoom_amd64.deb && \
-  sudo apt install -y ./zoom_amd64.deb && \
-  rm ./zoom_amd64.deb \
+    wget https://zoom.us/client/latest/zoom_amd64.deb && \
+    sudo apt install -y ./zoom_amd64.deb && \
+    rm ./zoom_amd64.deb \
 )
 
 ########### Install Elm
@@ -176,10 +177,10 @@ which zoom || (\
 
 # Only do it if not already installed
 which elm || (\
-  curl -L -o elm.gz https://github.com/elm/compiler/releases/download/0.19.1/binary-for-linux-64-bit.gz && \
-  gunzip elm.gz && \
-  chmod +x elm && \
-  sudo mv elm /usr/local/bin/ \
+    curl -L -o elm.gz https://github.com/elm/compiler/releases/download/0.19.1/binary-for-linux-64-bit.gz && \
+    gunzip elm.gz && \
+    chmod +x elm && \
+    sudo mv elm /usr/local/bin/ \
 )
 
 ########### Install Skype
@@ -188,9 +189,9 @@ which elm || (\
 
 # Only do it if not already installed
 which skype || (\
-  wget https://go.skype.com/skypeforlinux-64.deb && \
-  sudo apt install ./skypeforlinux-64.deb && \
-  rm ./skypeforlinux-64.deb \
+    wget https://go.skype.com/skypeforlinux-64.deb && \
+    sudo apt install ./skypeforlinux-64.deb && \
+    rm ./skypeforlinux-64.deb \
 )
 
 
