@@ -42,5 +42,6 @@
   "window.zoomLevel": -1,
   "[python]": {
     "editor.formatOnType": true
-  }
+  },
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }
