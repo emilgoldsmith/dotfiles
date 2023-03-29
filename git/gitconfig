@@ -11,3 +11,5 @@
 	showUntrackedFiles = all
 [pull]
 	rebase = false
+[fetch]
+	prune = true
