@@ -109,6 +109,12 @@ function commit_any_dotfile_changes () {
         # It has changes
         echo "Changes discovered in your dotfiles repo. Waiting for internet to be able to commit and push the changes to the remote"
         wait-for-internet
+        echo "Stashing and pulling latest changes first"
+        set -e
+        git stash
+        git pull
+        git stash apply
+        set +e
         echo "The following changes are what will be committed to the dotfiles repo:"
         sleep 1.5
         git --no-pager diff
