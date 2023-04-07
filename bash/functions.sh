@@ -147,6 +147,9 @@ function handle_dot_nvm_file () {
     if [ $retVal -eq 0 ]; then
         echo "Node version applied via .nvmrc"
     fi
+    if [[ $retVal -ne 3 && $retVal -ne 0 ]]; then
+        nvm use default &> /dev/null
+    fi
 }
 
 # Make sure we also check on initialization
