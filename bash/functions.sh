@@ -1,8 +1,8 @@
 function encrypt () {
     # crypten - a script to encrypt files using openssl
-    
+
     FNAME=$1
-    
+
     if [[ -z "$FNAME" ]]; then
         echo "crypten <name of file>"
         echo "  - crypten is a script to encrypt files using des3"
@@ -13,9 +13,9 @@ function encrypt () {
 
 function decrypt () {
     # cryptde - a script to decrypt files using openssl
-    
+
     FNAME=$1
-    
+
     if [[ -z "$FNAME" ]]; then
         echo "cryptde <name of file>"
         echo "  - cryptde is a script to decrypt des3 encrypted files"
@@ -27,14 +27,14 @@ function decrypt () {
 function delete-stale-local-git-branches () {
     git remote prune origin
     STALE_BRANCHES=$(git branch -vv | grep '\[.*/.*: gone\]' | awk '{print $1}')
-    
+
     printf "Your stale branches are:\n"
     printf "$STALE_BRANCHES\n"
-    
+
     printf "Are you sure you wish to delete these branches? [N/y]: "
-    
+
     read REPLY
-    
+
     if [[ $REPLY == 'y' ]];
     then
         echo $STALE_BRANCHES | xargs git branch -D
@@ -67,13 +67,13 @@ function wait-for-internet () {
 
 function ogv-to-mp4 () {
     FNAME=$1
-    
+
     if [[ -z "$FNAME" ]]; then
         echo "ogv-to-mp4 <name of file>"
         echo "  - ogv-to-mp4 is a script to convert ogv files to mp4 files"
     else
         echo "${FNAME%.[^.]*}.mp4"
-        
+
         ffmpeg -i "$FNAME" \
         -c:v libx264 -preset veryslow -crf 22 \
         -c:a libmp3lame -qscale:a 2 -ac 2 -ar 44100 \
@@ -102,7 +102,7 @@ function commit_any_dotfile_changes () {
     functions_file=$(realpath "${BASH_SOURCE[0]}")
     dotfiles_dir=$(dirname $functions_file)/..
     cd "$dotfiles_dir"
-    
+
     # This has exit code one if there are any differences
     output=$(git status --porcelain) && [ -z "$output" ]
     if [[ $? == "1" ]]; then
@@ -147,7 +147,7 @@ function handle_dot_nvm_file () {
     if [ $retVal -eq 0 ]; then
         echo "Node version applied via .nvmrc"
     fi
-    if [[ $retVal -ne 3 && $retVal -ne 0 ]]; then
+    if [[ $retVal -ne 3 && $retVal -ne 0 && $(nvm alias default | egrep -o 'v[0-9]+.[0-9]+.[0-9]+') != $(node --version) ]]; then
         nvm use default &> /dev/null
     fi
 }
