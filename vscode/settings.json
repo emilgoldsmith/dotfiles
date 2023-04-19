@@ -30,7 +30,7 @@
   "python.formatting.provider": "black",
   "terminal.integrated.tabs.enabled": true,
   "terminal.integrated.gpuAcceleration": "on",
-  "workbench.colorTheme": "Default Dark+",
+  "workbench.colorTheme": "Default Light+",
   "terminal.integrated.enableMultiLinePasteWarning": false,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.wrapTabs": true,
