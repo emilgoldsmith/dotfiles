@@ -30,7 +30,6 @@
   "python.formatting.provider": "black",
   "terminal.integrated.tabs.enabled": true,
   "terminal.integrated.gpuAcceleration": "on",
-  "workbench.colorTheme": "Default Dark+",
   "terminal.integrated.enableMultiLinePasteWarning": false,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.wrapTabs": true,
@@ -46,5 +45,11 @@
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
