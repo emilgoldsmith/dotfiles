@@ -38,7 +38,6 @@
     "*.snap": "javascript"
   },
   "editor.inlineSuggest.enabled": true,
-  "window.zoomLevel": -1,
   "[python]": {
     "editor.formatOnType": true
   },
@@ -51,5 +50,6 @@
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "window.zoomLevel": -1
 }
