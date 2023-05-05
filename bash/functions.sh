@@ -138,6 +138,7 @@ function codeforces_contest_ratings() {
 }
 
 
+default_version=$(nvm alias default | egrep -o 'v[0-9]+.[0-9]+.[0-9]+')
 function handle_dot_nvm_file () {
     nvm use &> /dev/null
     retVal=$?
@@ -147,13 +148,11 @@ function handle_dot_nvm_file () {
     if [ $retVal -eq 0 ]; then
         echo "Node version applied via .nvmrc"
     fi
-    if [[ $retVal -ne 3 && $retVal -ne 0 && $(nvm alias default | egrep -o 'v[0-9]+.[0-9]+.[0-9]+') != $(node --version) ]]; then
+    if [[ $retVal -ne 3 && $retVal -ne 0 && $(node --version) != default_version ]]; then
         nvm use default &> /dev/null
+        echo "Switched to default node version"
     fi
 }
-
-# Make sure we also check on initialization
-handle_dot_nvm_file
 
 function cd () {
     builtin cd "$@"
