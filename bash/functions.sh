@@ -1,4 +1,4 @@
-function encrypt () {
+function encrypt() {
     # crypten - a script to encrypt files using openssl
 
     FNAME=$1
@@ -11,7 +11,7 @@ function encrypt () {
     fi
 }
 
-function decrypt () {
+function decrypt() {
     # cryptde - a script to decrypt files using openssl
 
     FNAME=$1
@@ -24,7 +24,7 @@ function decrypt () {
     fi
 }
 
-function delete-stale-local-git-branches () {
+function delete-stale-local-git-branches() {
     git remote prune origin
     STALE_BRANCHES=$(git branch -vv | grep '\[.*/.*: gone\]' | awk '{print $1}')
 
@@ -35,37 +35,35 @@ function delete-stale-local-git-branches () {
 
     read REPLY
 
-    if [[ $REPLY == 'y' ]];
-    then
-        echo $STALE_BRANCHES | xargs git branch -D
+    if [[ $REPLY == 'y' ]]; then
+        echo "$STALE_BRANCHES" | xargs git branch -D
     fi
 }
 
-function disable-trackpoint () {
+function disable-trackpoint() {
     PROP_NUMBER=$(xinput list-props "TPPS/2 IBM TrackPoint" | grep "Device Enabled" | sed 's/.*(\([0-9]*\)).*/\1/')
-    xinput set-prop "TPPS/2 IBM TrackPoint" $PROP_NUMBER 0
+    xinput set-prop "TPPS/2 IBM TrackPoint" "$PROP_NUMBER" 0
 }
 
-function enable-trackpoint () {
+function enable-trackpoint() {
     PROP_NUMBER=$(xinput list-props "TPPS/2 IBM TrackPoint" | grep "Device Enabled" | sed 's/.*(\([0-9]*\)).*/\1/')
-    xinput set-prop "TPPS/2 IBM TrackPoint" $PROP_NUMBER 1
+    xinput set-prop "TPPS/2 IBM TrackPoint" "$PROP_NUMBER" 1
 }
 
-function running-calculator () {
+function running-calculator() {
     python ~/dotfiles_helpers/scripts/running-calculator.py
 }
 
-function wait-for-internet () {
+function wait-for-internet() {
     IS_UP=1
-    while [ $IS_UP -ne 0 ]
-    do
+    while [ "$IS_UP" -ne 0 ]; do
         sleep 1
         ping google.com -c 1
         IS_UP=$(echo $?)
     done
 }
 
-function ogv-to-mp4 () {
+function ogv-to-mp4() {
     FNAME=$1
 
     if [[ -z "$FNAME" ]]; then
@@ -75,13 +73,13 @@ function ogv-to-mp4 () {
         echo "${FNAME%.[^.]*}.mp4"
 
         ffmpeg -i "$FNAME" \
-        -c:v libx264 -preset veryslow -crf 22 \
-        -c:a libmp3lame -qscale:a 2 -ac 2 -ar 44100 \
-        "${FNAME%.[^.]*}.mp4"
+            -c:v libx264 -preset veryslow -crf 22 \
+            -c:a libmp3lame -qscale:a 2 -ac 2 -ar 44100 \
+            "${FNAME%.[^.]*}.mp4"
     fi
 }
 
-function py () {
+function py() {
     version=$(python --version 2>&1)
     if [[ $version == "Python 3."* ]]; then
         python $@
@@ -90,17 +88,16 @@ function py () {
     fi
 }
 
-function commit_any_dotfile_changes () {
+function commit_any_dotfile_changes() {
     # Don't commit any changes if we're in a VSCode remote container
-    if [[ -n $REMOTE_CONTAINERS ]];
-    then
+    if [[ -n $REMOTE_CONTAINERS ]]; then
         return 0
     fi
     # Save current directory so we can return to it
     current_dir=$(pwd)
     # Enter the dotfiles dir to check for any changes
     functions_file=$(realpath "${BASH_SOURCE[0]}")
-    dotfiles_dir=$(dirname $functions_file)/..
+    dotfiles_dir=$(dirname "$functions_file")/..
     cd "$dotfiles_dir"
 
     # This has exit code one if there are any differences
@@ -137,29 +134,31 @@ function codeforces_contest_ratings() {
     console.log({contestName: x.result.contest.name, problems: x.result.problems.map(y => ({name: y.name, rating: y.rating}))});"
 }
 
+default_version=$(nvm alias default | grep -E -o 'v[0-9]+.[0-9]+.[0-9]+')
 
-default_version=$(nvm alias default | egrep -o 'v[0-9]+.[0-9]+.[0-9]+')
-function handle_dot_nvm_file () {
-    nvm use &> /dev/null
-    retVal=$?
-    if [ $retVal -eq 3 ]; then
-        nvm install;
+function handle_dot_nvm_file() {
+    if [[ -f .nvmrc && $(cat .nvmrc) != $(node --version) ]]; then
+        nvm use &> /dev/null
+        retVal=$?
+        if [ $retVal -eq 3 ]; then
+            nvm install
+        fi
+        if [ $retVal -eq 0 ]; then
+            echo "Node version applied via .nvmrc"
+        fi
     fi
-    if [ $retVal -eq 0 ]; then
-        echo "Node version applied via .nvmrc"
-    fi
-    if [[ $retVal -ne 3 && $retVal -ne 0 && $(node --version) != $default_version ]]; then
+    if [[ ! -f .nvmrc && $(node --version) != "$default_version" ]]; then
         nvm use default &> /dev/null
         echo "Switched to default node version"
     fi
 }
 
-function cd () {
+function cd() {
     builtin cd "$@"
     handle_dot_nvm_file
 }
 
-webmToMp4 () {
+webmToMp4() {
     base=$(basename "$1" .webm)
     ffmpeg -i "$1" -qscale 0 "$base".mp4
 }
