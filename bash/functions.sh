@@ -134,10 +134,10 @@ function codeforces_contest_ratings() {
     console.log({contestName: x.result.contest.name, problems: x.result.problems.map(y => ({name: y.name, rating: y.rating}))});"
 }
 
-default_version=$(which nvm &>/dev/null && nvm alias default | grep -E -o 'v[0-9]+.[0-9]+.[0-9]+')
+default_version=$(type nvm &>/dev/null && nvm alias default | grep -E -o 'v[0-9]+.[0-9]+.[0-9]+')
 
 function handle_dot_nvm_file() {
-    if which nvm; then
+    if type nvm &>/dev/null; then
         if [[ -f .nvmrc && $(cat .nvmrc) != $(node --version) ]]; then
             nvm use &>/dev/null
             retVal=$?
