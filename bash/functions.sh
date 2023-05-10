@@ -134,22 +134,24 @@ function codeforces_contest_ratings() {
     console.log({contestName: x.result.contest.name, problems: x.result.problems.map(y => ({name: y.name, rating: y.rating}))});"
 }
 
-default_version=$(nvm alias default | grep -E -o 'v[0-9]+.[0-9]+.[0-9]+')
+default_version=$(which nvm &>/dev/null && nvm alias default | grep -E -o 'v[0-9]+.[0-9]+.[0-9]+')
 
 function handle_dot_nvm_file() {
-    if [[ -f .nvmrc && $(cat .nvmrc) != $(node --version) ]]; then
-        nvm use &> /dev/null
-        retVal=$?
-        if [ $retVal -eq 3 ]; then
-            nvm install
+    if which nvm; then
+        if [[ -f .nvmrc && $(cat .nvmrc) != $(node --version) ]]; then
+            nvm use &>/dev/null
+            retVal=$?
+            if [ $retVal -eq 3 ]; then
+                nvm install
+            fi
+            if [ $retVal -eq 0 ]; then
+                echo "Node version applied via .nvmrc"
+            fi
         fi
-        if [ $retVal -eq 0 ]; then
-            echo "Node version applied via .nvmrc"
+        if [[ ! -f .nvmrc && $(node --version) != "$default_version" ]]; then
+            nvm use default &>/dev/null
+            echo "Switched to default node version"
         fi
-    fi
-    if [[ ! -f .nvmrc && $(node --version) != "$default_version" ]]; then
-        nvm use default &> /dev/null
-        echo "Switched to default node version"
     fi
 }
 
