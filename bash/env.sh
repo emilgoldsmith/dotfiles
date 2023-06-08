@@ -6,3 +6,4 @@ export PATH=$PATH:~/bin
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/go/bin
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:~/.yarn/bin
