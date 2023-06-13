@@ -13,3 +13,7 @@ Host pg34-jetson
 Host pg25-jetson
   HostName=10-11-12-2.pg25.picogrid
   User=pg
+
+Host pg43-jetson
+  HostName=10-11-12-2.pg43.picogrid
+  User=pg
