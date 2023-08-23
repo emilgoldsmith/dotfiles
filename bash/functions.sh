@@ -160,7 +160,19 @@ function cd() {
     handle_dot_nvm_file
 }
 
-webmToMp4() {
+function webmToMp4() {
     base=$(basename "$1" .webm)
     ffmpeg -i "$1" -qscale 0 "$base".mp4
+}
+
+function ssh-lander() {
+    ssh pg@10-11-12-2.$1.picogrid
+}
+
+function ssh-camera-lander-3() {
+    ssh -L 8000:10.11.12.3:443 pg@10-11-12-2.$1.picogrid
+}
+
+function ssh-camera-lander-4() {
+    ssh -L 8000:10.11.12.4:443 pg@10-11-12-2.$1.picogrid
 }
