@@ -83,5 +83,8 @@
     "!Split",
     "!Split sequence"
   ],
-  "window.zoomLevel": -1
+  "window.zoomLevel": -1,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
