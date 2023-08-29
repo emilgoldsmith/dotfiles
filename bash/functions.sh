@@ -98,7 +98,7 @@ function commit_any_dotfile_changes() {
     # Enter the dotfiles dir to check for any changes
     functions_file=$(realpath "${BASH_SOURCE[0]}")
     dotfiles_dir=$(dirname "$functions_file")/..
-    cd "$dotfiles_dir"
+    builtin cd "$dotfiles_dir"
 
     # This has exit code one if there are any differences
     output=$(git status --porcelain) && [ -z "$output" ]
@@ -122,7 +122,7 @@ function commit_any_dotfile_changes() {
         git push
     fi
     # Return to the directory you were in before
-    cd "$current_dir"
+    builtin cd "$current_dir"
 }
 
 function commitAll() {
@@ -146,7 +146,7 @@ function handle_dot_nvm_file() {
         done;
         nvmrcPath="${nvmrcPrefix}/.nvmrc"
         if [[ -f "${nvmrcPath}" && $(cat "${nvmrcPath}") != $(node --version) ]]; then
-            cd "${nvmrcPrefix}"
+            builtin cd "${nvmrcPrefix}"
             nvm use &>/dev/null
             retVal=$?
             if [ $retVal -eq 3 ]; then
@@ -155,7 +155,7 @@ function handle_dot_nvm_file() {
             if [ $retVal -eq 0 ]; then
                 echo "Node version applied via .nvmrc"
             fi
-            cd -
+            builtin cd -
         fi
         if [[ ! -f "${nvmrcPath}" && $(node --version) != "$default_version" ]]; then
             nvm use default &>/dev/null
