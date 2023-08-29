@@ -153,7 +153,7 @@ function handle_dot_nvm_file() {
             if [ $retVal -eq 0 ]; then
                 echo "Node version applied via .nvmrc"
             fi
-            builtin cd -
+            builtin cd - >/dev/null
         fi
         if [[ ! -f "${nvmrcPath}" && $(node --version) != "$default_version" ]]; then
             nvm use default &>/dev/null
