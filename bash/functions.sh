@@ -141,8 +141,6 @@ function handle_dot_nvm_file() {
         nvmrcPrefix="."
         while [[ ! -f "${nvmrcPrefix}/.nvmrc" && ${#nvmrcPrefix} -lt 14 ]]; do
           nvmrcPrefix="${nvmrcPrefix}/.."
-          echo "${nvmrcPrefix}"
-          echo "${#nvmrcPrefix}"
         done;
         nvmrcPath="${nvmrcPrefix}/.nvmrc"
         if [[ -f "${nvmrcPath}" && $(cat "${nvmrcPath}") != $(node --version) ]]; then
