@@ -138,7 +138,13 @@ default_version=$(type nvm &>/dev/null && nvm alias default | grep -E -o 'v[0-9]
 
 function handle_dot_nvm_file() {
     if type nvm &>/dev/null; then
-        if [[ -f .nvmrc && $(cat .nvmrc) != $(node --version) ]]; then
+        nvmrcPrefix="."
+        while [[ ! -f "${nvmrcPrefix}/.nvmrc" && ${#nvmrcPrefix} -lt 14 ]]; do
+          nvmrcPrefix="${nvmrcPrefix}/.."
+        done;
+        nvmrcPath="${nvmrcPrefix}/.nvmrc"
+        if [[ -f "${nvmrcPath}" && $(cat "${nvmrcPath}") != $(node --version) ]]; then
+            cd "${nvmrcPrefix}"
             nvm use &>/dev/null
             retVal=$?
             if [ $retVal -eq 3 ]; then
@@ -147,8 +153,9 @@ function handle_dot_nvm_file() {
             if [ $retVal -eq 0 ]; then
                 echo "Node version applied via .nvmrc"
             fi
+            cd -
         fi
-        if [[ ! -f .nvmrc && $(node --version) != "$default_version" ]]; then
+        if [[ ! -f "${nvmrcPath}" && $(node --version) != "$default_version" ]]; then
             nvm use default &>/dev/null
             echo "Switched to default node version"
         fi
