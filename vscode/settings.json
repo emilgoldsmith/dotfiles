@@ -39,7 +39,8 @@
   },
   "editor.inlineSuggest.enabled": true,
   "[python]": {
-    "editor.formatOnType": true
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "ms-python.black-formatter"
   },
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "[shellscript]": {
