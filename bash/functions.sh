@@ -183,3 +183,7 @@ function ssh-camera-lander-3() {
 function ssh-camera-lander-4() {
     ssh -L 8000:10.11.12.4:443 pg@10-11-12-2.$1.picogrid
 }
+
+function ssh-camera-lander-5() {
+    ssh -L 8000:10.11.12.5:443 pg@10-11-12-2.$1.picogrid
+}
