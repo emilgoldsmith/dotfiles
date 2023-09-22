@@ -21,3 +21,7 @@ Host pg43-jetson
 Host pg42-jetson
   HostName=10-11-12-2.pg42.picogrid
   User=pg
+
+Host sentry-picogrid
+  HostName=ec2-3-31-79-236.us-gov-west-1.compute.amazonaws.com
+  User=ubuntu
