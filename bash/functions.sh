@@ -173,7 +173,7 @@ function webmToMp4() {
 }
 
 function ssh-lander() {
-    ssh pg@10-11-12-2.$1.picogrid "$@" || ssh pg@10-11-12-2.${1}b.picogrid "$@"
+    ssh pg@10-11-12-2.$1.picogrid "${@:2}" || ssh pg@10-11-12-2.${1}b.picogrid "${@:2}"
 }
 
 function ssh-camera-lander-3() {
