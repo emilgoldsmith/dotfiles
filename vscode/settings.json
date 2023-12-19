@@ -91,6 +91,5 @@
   "go.toolsManagement.autoUpdate": true,
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "aws.samcli.lambdaTimeout": 91234
+  }
 }
