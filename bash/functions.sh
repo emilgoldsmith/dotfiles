@@ -88,7 +88,8 @@ function py() {
     fi
 }
 
-    functions_file=$(realpath "${(%):-%N}")
+echo $SHELL
+functions_file=$(realpath "${(%):-%N}")
 function commit_any_dotfile_changes() {
     # Don't commit any changes if we're in a VSCode remote container
     if [[ -n $REMOTE_CONTAINERS ]]; then
