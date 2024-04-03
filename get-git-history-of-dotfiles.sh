@@ -2,7 +2,8 @@
 
 set -euo pipefail
 
-this_file=$(realpath "${BASH_SOURCE[0]}")
+this_file=$(realpath "${(%):-%N}")
+echo $this_file
 dotfiles_dir=$(dirname $this_file)
 
 cd "$dotfiles_dir"

@@ -2,7 +2,8 @@
 
 set -euo pipefail
 
-relative_dotfiles_dir=$(dirname "${BASH_SOURCE[0]}")
+relative_dotfiles_dir=$(dirname "${(%):-%N}")
+echo $relative_dotfiles_dir
 dotfiles_dir=$(realpath $relative_dotfiles_dir)
 
 mkdir -p ~/dotfiles_helpers
@@ -16,13 +17,11 @@ ln -svf $dotfiles_dir/bash/functions.sh ~/dotfiles_helpers/functions.sh
 ln -svf $dotfiles_dir/bash/scripts ~/dotfiles_helpers/scripts
 ln -svf $dotfiles_dir/bash/bashrc.sh ~/.bashrc
 ln -svf $dotfiles_dir/bash/bashrc.sh ~/.bash_profile
+ln -svf $dotfiles_dir/bash/zshrc.sh ~/.zshrc
 # Git
 ln -svf $dotfiles_dir/git/gitconfig ~/.gitconfig
 mkdir -p ~/.config/git
 ln -svf $dotfiles_dir/git/global-gitignore ~/.config/git/ignore
-# SSH
-mkdir -p ~/.ssh
-ln -svf $dotfiles_dir/ssh/ssh_config ~/.ssh/config
 # Vim
 ln -svf $dotfiles_dir/vim/vimrc ~/.vimrc
 ln -svf $dotfiles_dir/vim/vim-packages ~/.vim
