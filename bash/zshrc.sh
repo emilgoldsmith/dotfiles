@@ -23,7 +23,8 @@ parse_git_branch() {
 }
 
 autoload -U colors && colors
-PS1="%{$fg[green]%}%n@%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%} ($(parse_git_branch))$ "
+setopt prompt_subst
+PS1="%{$fg[green]%}%n@%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}"'$(parse_git_branch)$ '
 
 eval "$(direnv hook zsh)"
 
