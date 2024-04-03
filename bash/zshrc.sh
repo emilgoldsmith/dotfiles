@@ -18,8 +18,12 @@ source ~/dotfiles_helpers/alias.sh
 source ~/dotfiles_helpers/env.sh
 source ~/dotfiles_helpers/functions.sh
 
+parse_git_branch() {
+  git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
 autoload -U colors && colors
-PS1="%{$fg[green]%}%n@%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$ "
+PS1="%{$fg[green]%}%n@%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%} ($(parse_git_branch))$ "
 
 eval "$(direnv hook zsh)"
 
