@@ -18,7 +18,10 @@ source ~/dotfiles_helpers/alias.sh
 source ~/dotfiles_helpers/env.sh
 source ~/dotfiles_helpers/functions.sh
 
-PS1='%n@%m %1d %#'
+autoload -U colors && colors
+PS1="%{$fg[green]%}%n@%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$ "
+
+eval "$(direnv hook zsh)"
 
 # Make sure our dotfiles repo is always up to date
 commit_any_dotfile_changes
