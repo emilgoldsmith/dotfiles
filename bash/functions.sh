@@ -88,9 +88,9 @@ function py() {
     fi
 }
 
-if [[ $SHELL = '/bin/zsh' ]]; then 
+if [[ $SHELL = '/bin/zsh' ]]; then
     functions_file=$(realpath "${(%):-%N}")
-else 
+else
     functions_file=$(realpath "${BASH_SOURCE[0]}")
 fi
 function commit_any_dotfile_changes() {
@@ -164,6 +164,23 @@ function handle_dot_nvm_file() {
             echo "Switched to default node version"
         fi
     fi
+}
+
+function handle_virtual_env() {
+    if [[ -z "$VIRTUAL_ENV" ]] ; then
+    ## If env folder is found then activate the vitualenv
+      if [[ -d ./virtualenv ]] ; then
+        source ./virtualenv/bin/activate
+      fi
+  else
+    ## check the current folder belong to earlier VIRTUAL_ENV folder
+    # if yes then do nothing
+    # else deactivate
+      parentdir="$(dirname "$VIRTUAL_ENV")"
+      if [[ "$PWD"/ != "$parentdir"/* ]] ; then
+        deactivate
+      fi
+  fi
 }
 
 function cd() {
