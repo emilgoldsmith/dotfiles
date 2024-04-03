@@ -88,8 +88,11 @@ function py() {
     fi
 }
 
-echo $SHELL
-functions_file=$(realpath "${(%):-%N}")
+if [[ $SHELL = '/bin/zsh' ]]; then 
+    functions_file=$(realpath "${(%):-%N}")
+else 
+    functions_file=$(realpath "${BASH_SOURCE[0]}")
+fi
 function commit_any_dotfile_changes() {
     # Don't commit any changes if we're in a VSCode remote container
     if [[ -n $REMOTE_CONTAINERS ]]; then
