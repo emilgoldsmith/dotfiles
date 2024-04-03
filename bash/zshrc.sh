@@ -25,8 +25,8 @@ eval "$(direnv hook zsh)"
 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/code/picogrid
-export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV=/Users/emil/.local/bin/virtualenv
+# export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
+# export VIRTUALENVWRAPPER_VIRTUALENV=/Users/emil/.local/bin/virtualenv
 source /Users/emil/.local/bin/virtualenvwrapper.sh
 
 # Make sure our dotfiles repo is always up to date
