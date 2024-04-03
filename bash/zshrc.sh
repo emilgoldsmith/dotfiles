@@ -23,6 +23,8 @@ PS1="%{$fg[green]%}%n@%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$ "
 
 eval "$(direnv hook zsh)"
 
+export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
+
 # Make sure our dotfiles repo is always up to date
 handle_virtual_env
 handle_dot_nvm_file
