@@ -186,6 +186,7 @@ function handle_virtual_env() {
 function cd() {
     builtin cd "$@"
     handle_dot_nvm_file
+    handle_virtual_env
 }
 
 function webmToMp4() {

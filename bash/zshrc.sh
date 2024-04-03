@@ -28,4 +28,6 @@ export PROJECT_HOME=$HOME/code/picogrid
 source /Users/emil/.local/bin/virtualenvwrapper.sh
 
 # Make sure our dotfiles repo is always up to date
+handle_virtual_env
+handle_dot_nvm_file
 commit_any_dotfile_changes
