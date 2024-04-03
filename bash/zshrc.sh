@@ -18,7 +18,7 @@ source ~/dotfiles_helpers/alias.sh
 source ~/dotfiles_helpers/env.sh
 source ~/dotfiles_helpers/functions.sh
 
-PS1='%n@%m %1 %#'
+PS1='%n@%m %1d %#'
 
 # Make sure our dotfiles repo is always up to date
 commit_any_dotfile_changes
