@@ -13,3 +13,5 @@
 	rebase = false
 [fetch]
 	prune = true
+[submodule]
+	recurse = true
