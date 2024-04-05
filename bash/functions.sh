@@ -169,8 +169,8 @@ function handle_dot_nvm_file() {
 function handle_virtual_env() {
     if [[ -z "$VIRTUAL_ENV" ]] ; then
     ## If env folder is found then activate the vitualenv
-      if [[ -d ./virtualenv ]] ; then
-        source ./virtualenv/bin/activate
+      if [[ -d ./venv ]] ; then
+        source ./venv/bin/activate
       fi
   else
     ## check the current folder belong to earlier VIRTUAL_ENV folder
