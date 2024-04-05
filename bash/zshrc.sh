@@ -22,6 +22,8 @@ parse_git_branch() {
   git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
+set -o emacs
+
 autoload -U colors && colors
 setopt prompt_subst
 PS1="%{$fg[green]%}%n@%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}"'$(parse_git_branch)$ '
