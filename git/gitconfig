@@ -3,6 +3,7 @@
 	email = emilgoldsmith94@gmail.com
 [push]
 	default = simple
+	autoSetupRemote = true
 [core]
 	editor = vim
 [diff]
