@@ -30,8 +30,6 @@ PS1="%{$fg[green]%}%n@%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}"'$(pars
 
 eval "$(direnv hook zsh)"
 
-export DOCKER_DEFAULT_PLATFORM=linux/amd64
-
 export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
 
 # Make sure our dotfiles repo is always up to date
