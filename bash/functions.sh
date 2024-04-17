@@ -93,10 +93,7 @@ if [[ $SHELL = '/bin/zsh' ]]; then
 else
     functions_file=$(realpath "${BASH_SOURCE[0]}")
 fi
-echo "${functions_file}"
 function commit_any_dotfile_changes() {
-    echo "IN_COMMIT"
-    echo "${functions_file}"
     # Don't commit any changes if we're in a VSCode remote container
     if [[ -n $REMOTE_CONTAINERS ]]; then
         return 0
@@ -106,7 +103,6 @@ function commit_any_dotfile_changes() {
     # Enter the dotfiles dir to check for any changes
     dotfiles_dir=$(dirname "$functions_file")/..
     builtin cd "$dotfiles_dir"
-    echo "$dotfiles_dir"
 
     # This has exit code one if there are any differences
     output=$(git status --porcelain) && [ -z "$output" ]
