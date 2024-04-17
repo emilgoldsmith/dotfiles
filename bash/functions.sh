@@ -167,6 +167,10 @@ function handle_dot_nvm_file() {
 }
 
 function handle_virtual_env() {
+    if [[ $TERM_PROGRAM == "vscode" ]]; then
+        return
+    fi
+
     if [[ -z "$VIRTUAL_ENV" ]] ; then
     ## If env folder is found then activate the vitualenv
       if [[ -d ./venv ]] ; then
@@ -179,6 +183,9 @@ function handle_virtual_env() {
       parentdir="$(dirname "$VIRTUAL_ENV")"
       if [[ "$PWD"/ != "$parentdir"/* ]] ; then
         deactivate
+      if [[ -d ./venv ]] ; then
+        source ./venv/bin/activate
+      fi
       fi
   fi
 }
