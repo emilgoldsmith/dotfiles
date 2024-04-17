@@ -93,7 +93,10 @@ if [[ $SHELL = '/bin/zsh' ]]; then
 else
     functions_file=$(realpath "${BASH_SOURCE[0]}")
 fi
+echo "${functions_file}"
 function commit_any_dotfile_changes() {
+    echo "IN_COMMIT"
+    echo "${functions_file}"
     # Don't commit any changes if we're in a VSCode remote container
     if [[ -n $REMOTE_CONTAINERS ]]; then
         return 0
@@ -103,6 +106,7 @@ function commit_any_dotfile_changes() {
     # Enter the dotfiles dir to check for any changes
     dotfiles_dir=$(dirname "$functions_file")/..
     builtin cd "$dotfiles_dir"
+    echo "$dotfiles_dir"
 
     # This has exit code one if there are any differences
     output=$(git status --porcelain) && [ -z "$output" ]
@@ -144,8 +148,8 @@ function handle_dot_nvm_file() {
     if type nvm &>/dev/null; then
         nvmrcPrefix="."
         while [[ ! -f "${nvmrcPrefix}/.nvmrc" && ${#nvmrcPrefix} -lt 14 ]]; do
-          nvmrcPrefix="${nvmrcPrefix}/.."
-        done;
+            nvmrcPrefix="${nvmrcPrefix}/.."
+        done
         nvmrcPath="${nvmrcPrefix}/.nvmrc"
         if [[ -f "${nvmrcPath}" && $(cat "${nvmrcPath}") != $(node --version) ]]; then
             builtin cd "${nvmrcPrefix}"
@@ -171,23 +175,23 @@ function handle_virtual_env() {
         return
     fi
 
-    if [[ -z "$VIRTUAL_ENV" ]] ; then
-    ## If env folder is found then activate the vitualenv
-      if [[ -d ./venv ]] ; then
-        source ./venv/bin/activate
-      fi
-  else
-    ## check the current folder belong to earlier VIRTUAL_ENV folder
-    # if yes then do nothing
-    # else deactivate
-      parentdir="$(dirname "$VIRTUAL_ENV")"
-      if [[ "$PWD"/ != "$parentdir"/* ]] ; then
-        deactivate
-      if [[ -d ./venv ]] ; then
-        source ./venv/bin/activate
-      fi
-      fi
-  fi
+    if [[ -z "$VIRTUAL_ENV" ]]; then
+        ## If env folder is found then activate the vitualenv
+        if [[ -d ./venv ]]; then
+            source ./venv/bin/activate
+        fi
+    else
+        ## check the current folder belong to earlier VIRTUAL_ENV folder
+        # if yes then do nothing
+        # else deactivate
+        parentdir="$(dirname "$VIRTUAL_ENV")"
+        if [[ "$PWD"/ != "$parentdir"/* ]]; then
+            deactivate
+            if [[ -d ./venv ]]; then
+                source ./venv/bin/activate
+            fi
+        fi
+    fi
 }
 
 function cd() {
@@ -218,5 +222,5 @@ function ssh-camera-lander-5() {
 }
 
 function ssh-debug-livestream {
-  ssh -L 2345:127.0.0.1:2345 pg@10-11-12-2.${1}.picogrid
+    ssh -L 2345:127.0.0.1:2345 pg@10-11-12-2.${1}.picogrid
 }

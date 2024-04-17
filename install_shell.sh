@@ -2,11 +2,7 @@
 
 set -euo pipefail
 
-if [[ $SHELL = '/bin/zsh' ]]; then 
-    relative_dotfiles_dir=$(dirname "${(%):-%N}")
-else 
-    relative_dotfiles_dir=$(dirname "${BASH_SOURCE[0]}")
-fi
+relative_dotfiles_dir=$(dirname "${BASH_SOURCE[0]}")
 dotfiles_dir=$(realpath $relative_dotfiles_dir)
 
 mkdir -p ~/dotfiles_helpers

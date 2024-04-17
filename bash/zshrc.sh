@@ -14,9 +14,13 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(thefuck --alias)"
 
+echo "HERE"
+
 source ~/dotfiles_helpers/alias.sh
 source ~/dotfiles_helpers/env.sh
 source ~/dotfiles_helpers/functions.sh
+
+echo "HERE2"
 
 parse_git_branch() {
   git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -35,4 +39,6 @@ export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
 # Make sure our dotfiles repo is always up to date
 handle_virtual_env
 handle_dot_nvm_file
+echo "WHOOPTIDOO"
 commit_any_dotfile_changes
+echo "COMMIT_DONE"
