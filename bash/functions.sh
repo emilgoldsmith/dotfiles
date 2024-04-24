@@ -149,6 +149,7 @@ function handle_dot_nvm_file() {
         nvmrcPath="${nvmrcPrefix}/.nvmrc"
         if [[ -f "${nvmrcPath}" && $(cat "${nvmrcPath}") != $(node --version) ]]; then
             builtin cd "${nvmrcPrefix}"
+            pwd
             nvm use &>/dev/null
             retVal=$?
             if [ $retVal -eq 3 ]; then
