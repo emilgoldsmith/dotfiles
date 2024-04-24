@@ -161,7 +161,7 @@ function handle_dot_nvm_file() {
             builtin cd - >/dev/null
         fi
         if [[ ! -f "${nvmrcPath}" && $(node --version) != "$default_version" ]]; then
-            nvm use default &>/dev/null
+            nvm use default
             echo "Switched to default node version"
         fi
     fi
