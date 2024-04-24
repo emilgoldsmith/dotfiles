@@ -149,8 +149,7 @@ function handle_dot_nvm_file() {
         nvmrcPath="${nvmrcPrefix}/.nvmrc"
         if [[ -f "${nvmrcPath}" && $(cat "${nvmrcPath}") != $(node --version) ]]; then
             builtin cd "${nvmrcPrefix}"
-            pwd
-            nvm use
+            nvm use &> /dev/null
             retVal=$?
             if [ $retVal -eq 3 ]; then
                 nvm install
@@ -161,7 +160,7 @@ function handle_dot_nvm_file() {
             builtin cd - >/dev/null
         fi
         if [[ ! -f "${nvmrcPath}" && $(node --version) != "$default_version" ]]; then
-            nvm use default
+            nvm use default &> /dev/null
             echo "Switched to default node version"
         fi
     fi
