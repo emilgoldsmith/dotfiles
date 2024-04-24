@@ -150,7 +150,7 @@ function handle_dot_nvm_file() {
         if [[ -f "${nvmrcPath}" && $(cat "${nvmrcPath}") != $(node --version) ]]; then
             builtin cd "${nvmrcPrefix}"
             pwd
-            nvm use &>/dev/null
+            nvm use
             retVal=$?
             if [ $retVal -eq 3 ]; then
                 nvm install
