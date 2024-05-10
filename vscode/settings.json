@@ -93,6 +93,5 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "terminal.integrated.sendKeybindingsToShell": true,
-  "window.autoDetectColorScheme": true,
-  "workbench.colorTheme": "Default Light Modern"
+  "window.autoDetectColorScheme": true
 }
