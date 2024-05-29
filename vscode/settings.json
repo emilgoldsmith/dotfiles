@@ -93,5 +93,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "terminal.integrated.sendKeybindingsToShell": true,
-  "window.autoDetectColorScheme": true
+  "window.autoDetectColorScheme": true,
+  "github.copilot.editor.enableAutoCompletions": true
 }
