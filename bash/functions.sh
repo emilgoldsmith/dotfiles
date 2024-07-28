@@ -166,26 +166,11 @@ function handle_dot_nvm_file() {
     fi
 }
 
-function handle_virtual_env() {
-    if [[ $TERM_PROGRAM == "vscode" ]]; then
-        return
-    fi
-
+function venv() {
     if [[ -z "$VIRTUAL_ENV" ]]; then
-        ## If env folder is found then activate the vitualenv
+        ## If env folder is found then activate the virtualenv
         if [[ -d ./venv ]]; then
             source ./venv/bin/activate
-        fi
-    else
-        ## check the current folder belong to earlier VIRTUAL_ENV folder
-        # if yes then do nothing
-        # else deactivate
-        parentdir="$(dirname "$VIRTUAL_ENV")"
-        if [[ "$PWD"/ != "$parentdir"/* ]]; then
-            deactivate
-            if [[ -d ./venv ]]; then
-                source ./venv/bin/activate
-            fi
         fi
     fi
 }
@@ -193,7 +178,6 @@ function handle_virtual_env() {
 function cd() {
     builtin cd "$@"
     handle_dot_nvm_file
-    handle_virtual_env
 }
 
 function webmToMp4() {
