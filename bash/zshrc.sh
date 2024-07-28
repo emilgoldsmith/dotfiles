@@ -33,6 +33,5 @@ eval "$(direnv hook zsh)"
 export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
 
 # Make sure our dotfiles repo is always up to date
-handle_virtual_env
 handle_dot_nvm_file
 commit_any_dotfile_changes
