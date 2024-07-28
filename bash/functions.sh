@@ -167,11 +167,8 @@ function handle_dot_nvm_file() {
 }
 
 function venv() {
-    if [[ -z "$VIRTUAL_ENV" ]]; then
-        ## If env folder is found then activate the virtualenv
-        if [[ -d ./venv ]]; then
-            source ./venv/bin/activate
-        fi
+    if [[ -d ./venv ]]; then
+        source ./venv/bin/activate
     fi
 }
 
