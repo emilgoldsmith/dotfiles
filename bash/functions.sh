@@ -174,7 +174,6 @@ function venv() {
 
 function cd() {
     builtin cd "$@"
-    handle_dot_nvm_file
 }
 
 function webmToMp4() {

@@ -22,4 +22,3 @@ source ~/dotfiles_helpers/functions.sh
 
 # Make sure our dotfiles repo is always up to date
 commit_any_dotfile_changes
-handle_dot_nvm_file
