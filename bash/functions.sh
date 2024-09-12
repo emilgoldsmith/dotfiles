@@ -186,7 +186,7 @@ function ssh-lander() {
 }
 
 function ssh-router-lander() {
-    ssh -L 7000:10.11.12.1:80 pg@10-11-12-2.$1.picogrid
+    ssh -L 7000:10.11.12.1:443 pg@10-11-12-2.$1.picogrid
 }
 
 function ssh-camera-lander-3() {
