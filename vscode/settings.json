@@ -94,5 +94,8 @@
   },
   "terminal.integrated.sendKeybindingsToShell": true,
   "window.autoDetectColorScheme": true,
-  "github.copilot.editor.enableAutoCompletions": true
+  "github.copilot.editor.enableAutoCompletions": true,
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  }
 }
