@@ -34,3 +34,6 @@ export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
 
 # Make sure our dotfiles repo is always up to date
 commit_any_dotfile_changes
+
+# Added by Amplify CLI binary installer
+export PATH="$HOME/.amplify/bin:$PATH"
