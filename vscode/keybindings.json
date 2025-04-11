@@ -42,5 +42,10 @@
     "key": "ctrl+shift+\\",
     "command": "-editor.action.jumpToBracket",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+g",
+    "command": "-extension.vim_ctrl+g",
+    "when": "editorTextFocus && vim.active && vim.use<C-g> && !inDebugRepl"
   }
 ]
