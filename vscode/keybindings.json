@@ -47,5 +47,9 @@
     "key": "ctrl+g",
     "command": "-extension.vim_ctrl+g",
     "when": "editorTextFocus && vim.active && vim.use<C-g> && !inDebugRepl"
+  },
+  {
+    "key": "cmd+i",
+    "command": "composerMode.agent"
   }
 ]
