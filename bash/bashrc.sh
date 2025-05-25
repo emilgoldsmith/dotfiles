@@ -22,3 +22,5 @@ source ~/dotfiles_helpers/functions.sh
 
 # Make sure our dotfiles repo is always up to date
 commit_any_dotfile_changes
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
