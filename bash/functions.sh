@@ -202,7 +202,7 @@ function ssh-camera-lander-5() {
 }
 
 function ssh-camera-lander-6() {
-    ssh -L 8000:10.11.12.5:443 pg@10-11-12-2.$1.picogrid
+    ssh -L 8000:10.11.12.6:443 pg@10-11-12-2.$1.picogrid
 }
 
 function ssh-debug-livestream {
