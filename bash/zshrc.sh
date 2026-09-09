@@ -38,3 +38,4 @@ commit_any_dotfile_changes
 # Added by Amplify CLI binary installer
 export PATH="$HOME/.amplify/bin:$PATH"
 export OP_ACCOUNT=picogrid.1password.com
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
